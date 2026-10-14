@@ -1,0 +1,320 @@
+[
+  {
+    "section": "정렬 / 이분 탐색 관련"
+  },
+  {
+    "title": "정렬 비교 함수 구현",
+    "path": "python/Sorting/Compare.py",
+    "original": "code/Sorting/Compare.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "좌표 압축",
+    "path": "python/Sorting/CoordCompress.py",
+    "original": "code/Sorting/CoordCompress.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "이분 탐색과 선택 알고리즘",
+    "path": "python/Sorting/STL.py",
+    "original": "code/Sorting/STL.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "section": "그래프/트리 (Easy)"
+  },
+  {
+    "title": "인접 리스트, DFS, BFS",
+    "path": "python/Graph1/DFSBFS.py",
+    "original": "code/Graph1/DFSBFS.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "위상 정렬",
+    "path": "python/Graph1/TopSort.py",
+    "original": "code/Graph1/TopSort.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "최단 거리 - Floyd Warshall",
+    "path": "python/Graph1/Floyd.py",
+    "original": "code/Graph1/Floyd.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "최단 거리 - Dijkstra",
+    "path": "python/Graph1/Dijkstra.py",
+    "original": "code/Graph1/Dijkstra.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "최단 거리 - Bellman Ford",
+    "path": "python/Graph1/Bellman.py",
+    "original": "code/Graph1/Bellman.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "유니온 파인드 + 최소 신장 트리(Kruskal)",
+    "path": "python/Graph1/Kruskal.py",
+    "original": "code/Graph1/Kruskal.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "section": "자료구조"
+  },
+  {
+    "title": "세그먼트 트리",
+    "path": "python/DataStructure/SegmentTree.py",
+    "original": "code/DataStructure/SegmentTree.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "세그먼트 트리 + 레이지 프로퍼게이션",
+    "path": "python/DataStructure/SegmentTreeLazy.py",
+    "original": "code/DataStructure/SegmentTreeLazy.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "Convex Hull Trick",
+    "path": "python/DataStructure/ConvexHullTrick.py",
+    "original": "code/DataStructure/ConvexHullTrick.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "퍼시스턴트 세그먼트 트리",
+    "path": "python/DataStructure/PersistentSegmentTree.py",
+    "original": "code/DataStructure/PersistentSegmentTree.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "section": "그래프/트리 (Hard)"
+  },
+  {
+    "title": "SCC - Kosaraju",
+    "path": "python/Graph2/SCC.py",
+    "original": "code/Graph2/SCC.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "BCC - Tarjan",
+    "path": "python/Graph2/BCC.py",
+    "original": "code/Graph2/BCC.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "최대 유량 - Dinic",
+    "path": "python/Graph2/Dinic.py",
+    "original": "code/Graph2/Dinic.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "MCMF",
+    "path": "python/Graph2/MCMF.py",
+    "original": "code/Graph2/MCMF.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "이분 매칭 - Hopcroft Karp",
+    "path": "python/Graph2/Hopcroft.py",
+    "original": "code/Graph2/Hopcroft.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "최소 공통 조상(LCA)",
+    "path": "python/Graph2/LCA.py",
+    "original": "code/Graph2/LCA.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "Heavy Light Decomposition",
+    "path": "python/Graph2/HLD.py",
+    "original": "code/Graph2/HLD.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "section": "수학"
+  },
+  {
+    "title": "나눗셈, 최대공약수, 최소공배수",
+    "path": "python/Math/Division.py",
+    "original": "code/Math/Division.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "빠른 거듭제곱",
+    "path": "python/Math/PowMod.py",
+    "original": "code/Math/PowMod.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "소수 판별, 소인수분해",
+    "path": "python/Math/Primes.py",
+    "original": "code/Math/Primes.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "에라토스테네스의 체, 소인수분해",
+    "path": "python/Math/Sieve.py",
+    "original": "code/Math/Sieve.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "선형 시간 체, 곱셈적 함수 전처리",
+    "path": "python/Math/LinearSieve.py",
+    "original": "code/Math/LinearSieve.cpp",
+    "author": "ahgus89"
+  },
+  {
+    "title": "확장 유클리드 알고리즘",
+    "path": "python/Math/ExtendedEuclidean.py",
+    "original": "code/Math/ExtendedEuclidean.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "중국인의 나머지 정리",
+    "path": "python/Math/ChineseRemainderTheorem.py",
+    "original": "code/Math/ChineseRemainderTheorem.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "이항 계수를 소수로 나눈 나머지",
+    "path": "python/Math/LucasTheorem.py",
+    "original": "code/Math/LucasTheorem.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "빠른 소수 판별, 소인수분해 - Miller Rabin, Pollard Rho",
+    "path": "python/Math/MillerRabin-PollardRho.py",
+    "original": "code/Math/MillerRabin-PollardRho.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "가우스 소거법 - RREF, 랭크, 행렬식, 역행렬",
+    "path": "python/Math/Matrix.py",
+    "original": "code/Math/Matrix.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "다항식 곱셈(FFT)",
+    "path": "python/Math/Convolution.py",
+    "original": "code/Math/Convolution.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "section": "문자열"
+  },
+  {
+    "title": "문자열 해싱",
+    "path": "python/String/Hashing.py",
+    "original": "code/String/Hashing.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "문자열 매칭 - KMP",
+    "path": "python/String/KMP.py",
+    "original": "code/String/KMP.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "가장 긴 팰린드롬 부분 문자열 - Manacher",
+    "path": "python/String/Manacher.py",
+    "original": "code/String/Manacher.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "문자열 매칭 - Z",
+    "path": "python/String/Z.py",
+    "original": "code/String/Z.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "접미사 배열",
+    "path": "python/String/SuffixArray.py",
+    "original": "code/String/SuffixArray.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "section": "계산 기하"
+  },
+  {
+    "title": "2차원 계산 기하 템플릿 + CCW",
+    "path": "python/Geometry/Template.py",
+    "original": "code/Geometry/Template.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "360도 각도 정렬",
+    "path": "python/Geometry/PolarSort.py",
+    "original": "code/Geometry/PolarSort.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "다각형 넓이",
+    "path": "python/Geometry/PolygonArea.py",
+    "original": "code/Geometry/PolygonArea.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "선분 교차 판정",
+    "path": "python/Geometry/SegmentIntersection.py",
+    "original": "code/Geometry/SegmentIntersection.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "다각형 내부 판별",
+    "path": "python/Geometry/PointInPolygon.py",
+    "original": "code/Geometry/PointInPolygon.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "볼록 껍질 - Monotone Chain",
+    "path": "python/Geometry/ConvexHull.py",
+    "original": "code/Geometry/ConvexHull.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "가장 먼 두 점 - Rotating Calipers",
+    "path": "python/Geometry/Calipers.py",
+    "original": "code/Geometry/Calipers.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "볼록 다각형 내부 판별",
+    "path": "python/Geometry/PointInConvexPolygon.py",
+    "original": "code/Geometry/PointInConvexPolygon.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "section": "기타"
+  },
+  {
+    "title": "가장 긴 증가하는 부분 수열(LIS)",
+    "path": "python/Misc/LIS.py",
+    "original": "code/Misc/LIS.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "이분 탐색",
+    "path": "python/Misc/BinarySearch.py",
+    "original": "code/Misc/BinarySearch.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "삼분 탐색",
+    "path": "python/Misc/TernarySearch.py",
+    "original": "code/Misc/TernarySearch.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "Python 랜덤, 순서 통계, 비트마스킹",
+    "path": "python/Misc/Cpp-Grammer.py",
+    "original": "code/Misc/Cpp-Grammer.cpp",
+    "author": "JusticeHui"
+  },
+  {
+    "title": "빠른 입력(Fast Input from STDIN)",
+    "path": "python/Misc/FastIO.py",
+    "original": "code/Misc/FastIO.cpp",
+    "author": "cgiosy"
+  }
+]

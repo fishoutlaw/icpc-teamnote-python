@@ -1,0 +1,43 @@
+{
+  "compiler": "g++.EXE (Rev13, Built by MSYS2 project) 15.2.0",
+  "flags": [
+    "-std=c++17",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Wno-misleading-indentation"
+  ],
+  "seed": 20261014,
+  "standalone_cpp_headers": 34,
+  "differential_cases": 1195,
+  "cases_by_operation": {
+    "dist": 55,
+    "bell": 55,
+    "mst": 55,
+    "seg": 5,
+    "lazy": 5,
+    "pst": 25,
+    "cht": 25,
+    "scc": 60,
+    "bcc": 61,
+    "flow": 61,
+    "cost": 61,
+    "match": 60,
+    "tree": 5,
+    "crt": 80,
+    "sieve": 5,
+    "prime": 58,
+    "matrix": 50,
+    "real": 1,
+    "conv": 60,
+    "bitconv": 45,
+    "strings": 80,
+    "geometry": 80,
+    "intersection": 150,
+    "lis": 50,
+    "io": 3
+  },
+  "status": "passed",
+  "online_judge": "not run",
+  "maximum_input_benchmark": "not run"
+}

@@ -1,0 +1,699 @@
+[
+  {
+    "section": "정렬 / 이분 탐색 관련"
+  },
+  {
+    "title": "정렬 비교 함수 구현",
+    "path": "python/Sorting/Compare.py",
+    "original": "code/Sorting/Compare.cpp",
+    "author": "JusticeHui",
+    "key": "Sorting/Compare",
+    "languages": [
+      "Python"
+    ],
+    "sources": {
+      "Python": "python/Sorting/Compare.py"
+    }
+  },
+  {
+    "title": "좌표 압축",
+    "path": "python/Sorting/CoordCompress.py",
+    "original": "code/Sorting/CoordCompress.cpp",
+    "author": "JusticeHui",
+    "key": "Sorting/CoordCompress",
+    "languages": [
+      "Python"
+    ],
+    "sources": {
+      "Python": "python/Sorting/CoordCompress.py"
+    }
+  },
+  {
+    "title": "이분 탐색과 선택 알고리즘",
+    "path": "python/Sorting/STL.py",
+    "original": "code/Sorting/STL.cpp",
+    "author": "JusticeHui",
+    "key": "Sorting/STL",
+    "languages": [
+      "Python"
+    ],
+    "sources": {
+      "Python": "python/Sorting/STL.py"
+    }
+  },
+  {
+    "section": "그래프/트리 (Easy)"
+  },
+  {
+    "title": "인접 리스트, DFS, BFS",
+    "path": "python/Graph1/DFSBFS.py",
+    "original": "code/Graph1/DFSBFS.cpp",
+    "author": "JusticeHui",
+    "key": "Graph1/DFSBFS",
+    "languages": [
+      "Python"
+    ],
+    "sources": {
+      "Python": "python/Graph1/DFSBFS.py"
+    }
+  },
+  {
+    "title": "위상 정렬",
+    "path": "python/Graph1/TopSort.py",
+    "original": "code/Graph1/TopSort.cpp",
+    "author": "JusticeHui",
+    "key": "Graph1/TopSort",
+    "languages": [
+      "Python"
+    ],
+    "sources": {
+      "Python": "python/Graph1/TopSort.py"
+    }
+  },
+  {
+    "title": "최단 거리 - Floyd Warshall",
+    "path": "python/Graph1/Floyd.py",
+    "original": "code/Graph1/Floyd.cpp",
+    "author": "JusticeHui",
+    "key": "Graph1/Floyd",
+    "languages": [
+      "Python",
+      "C++"
+    ],
+    "sources": {
+      "Python": "python/Graph1/Floyd.py",
+      "C++": "mixed/cpp/Graph1/Floyd.hpp"
+    }
+  },
+  {
+    "title": "최단 거리 - Dijkstra",
+    "path": "python/Graph1/Dijkstra.py",
+    "original": "code/Graph1/Dijkstra.cpp",
+    "author": "JusticeHui",
+    "key": "Graph1/Dijkstra",
+    "languages": [
+      "Python",
+      "C++"
+    ],
+    "sources": {
+      "Python": "python/Graph1/Dijkstra.py",
+      "C++": "mixed/cpp/Graph1/Dijkstra.hpp"
+    }
+  },
+  {
+    "title": "최단 거리 - Bellman Ford",
+    "path": "python/Graph1/Bellman.py",
+    "original": "code/Graph1/Bellman.cpp",
+    "author": "JusticeHui",
+    "key": "Graph1/Bellman",
+    "languages": [
+      "Python",
+      "C++"
+    ],
+    "sources": {
+      "Python": "python/Graph1/Bellman.py",
+      "C++": "mixed/cpp/Graph1/Bellman.hpp"
+    }
+  },
+  {
+    "title": "유니온 파인드 + 최소 신장 트리(Kruskal)",
+    "path": "python/Graph1/Kruskal.py",
+    "original": "code/Graph1/Kruskal.cpp",
+    "author": "JusticeHui",
+    "key": "Graph1/Kruskal",
+    "languages": [
+      "Python",
+      "C++"
+    ],
+    "sources": {
+      "Python": "python/Graph1/Kruskal.py",
+      "C++": "mixed/cpp/Graph1/Kruskal.hpp"
+    }
+  },
+  {
+    "section": "자료구조"
+  },
+  {
+    "title": "세그먼트 트리",
+    "path": "python/DataStructure/SegmentTree.py",
+    "original": "code/DataStructure/SegmentTree.cpp",
+    "author": "JusticeHui",
+    "key": "DataStructure/SegmentTree",
+    "languages": [
+      "Python",
+      "C++"
+    ],
+    "sources": {
+      "Python": "python/DataStructure/SegmentTree.py",
+      "C++": "mixed/cpp/DataStructure/SegmentTree.hpp"
+    }
+  },
+  {
+    "title": "세그먼트 트리 + 레이지 프로퍼게이션",
+    "path": "python/DataStructure/SegmentTreeLazy.py",
+    "original": "code/DataStructure/SegmentTreeLazy.cpp",
+    "author": "JusticeHui",
+    "key": "DataStructure/SegmentTreeLazy",
+    "languages": [
+      "C++"
+    ],
+    "sources": {
+      "C++": "mixed/cpp/DataStructure/SegmentTreeLazy.hpp"
+    }
+  },
+  {
+    "title": "Convex Hull Trick",
+    "path": "python/DataStructure/ConvexHullTrick.py",
+    "original": "code/DataStructure/ConvexHullTrick.cpp",
+    "author": "JusticeHui",
+    "key": "DataStructure/ConvexHullTrick",
+    "languages": [
+      "C++"
+    ],
+    "sources": {
+      "C++": "mixed/cpp/DataStructure/ConvexHullTrick.hpp"
+    }
+  },
+  {
+    "title": "퍼시스턴트 세그먼트 트리",
+    "path": "python/DataStructure/PersistentSegmentTree.py",
+    "original": "code/DataStructure/PersistentSegmentTree.cpp",
+    "author": "JusticeHui",
+    "key": "DataStructure/PersistentSegmentTree",
+    "languages": [
+      "C++"
+    ],
+    "sources": {
+      "C++": "mixed/cpp/DataStructure/PersistentSegmentTree.hpp"
+    }
+  },
+  {
+    "section": "그래프/트리 (Hard)"
+  },
+  {
+    "title": "SCC - Kosaraju",
+    "path": "python/Graph2/SCC.py",
+    "original": "code/Graph2/SCC.cpp",
+    "author": "JusticeHui",
+    "key": "Graph2/SCC",
+    "languages": [
+      "Python",
+      "C++"
+    ],
+    "sources": {
+      "Python": "python/Graph2/SCC.py",
+      "C++": "mixed/cpp/Graph2/SCC.hpp"
+    }
+  },
+  {
+    "title": "BCC - Tarjan",
+    "path": "python/Graph2/BCC.py",
+    "original": "code/Graph2/BCC.cpp",
+    "author": "JusticeHui",
+    "key": "Graph2/BCC",
+    "languages": [
+      "C++"
+    ],
+    "sources": {
+      "C++": "mixed/cpp/Graph2/BCC.hpp"
+    }
+  },
+  {
+    "title": "최대 유량 - Dinic",
+    "path": "python/Graph2/Dinic.py",
+    "original": "code/Graph2/Dinic.cpp",
+    "author": "JusticeHui",
+    "key": "Graph2/Dinic",
+    "languages": [
+      "C++"
+    ],
+    "sources": {
+      "C++": "mixed/cpp/Graph2/Dinic.hpp"
+    }
+  },
+  {
+    "title": "MCMF",
+    "path": "python/Graph2/MCMF.py",
+    "original": "code/Graph2/MCMF.cpp",
+    "author": "JusticeHui",
+    "key": "Graph2/MCMF",
+    "languages": [
+      "C++"
+    ],
+    "sources": {
+      "C++": "mixed/cpp/Graph2/MCMF.hpp"
+    }
+  },
+  {
+    "title": "이분 매칭 - Hopcroft Karp",
+    "path": "python/Graph2/Hopcroft.py",
+    "original": "code/Graph2/Hopcroft.cpp",
+    "author": "JusticeHui",
+    "key": "Graph2/Hopcroft",
+    "languages": [
+      "C++"
+    ],
+    "sources": {
+      "C++": "mixed/cpp/Graph2/Hopcroft.hpp"
+    }
+  },
+  {
+    "title": "최소 공통 조상(LCA)",
+    "path": "python/Graph2/LCA.py",
+    "original": "code/Graph2/LCA.cpp",
+    "author": "JusticeHui",
+    "key": "Graph2/LCA",
+    "languages": [
+      "Python",
+      "C++"
+    ],
+    "sources": {
+      "Python": "python/Graph2/LCA.py",
+      "C++": "mixed/cpp/Graph2/LCA.hpp"
+    }
+  },
+  {
+    "title": "Heavy Light Decomposition",
+    "path": "python/Graph2/HLD.py",
+    "original": "code/Graph2/HLD.cpp",
+    "author": "JusticeHui",
+    "key": "Graph2/HLD",
+    "languages": [
+      "C++"
+    ],
+    "sources": {
+      "C++": "mixed/cpp/Graph2/HLD.hpp"
+    }
+  },
+  {
+    "section": "수학"
+  },
+  {
+    "title": "나눗셈, 최대공약수, 최소공배수",
+    "path": "python/Math/Division.py",
+    "original": "code/Math/Division.cpp",
+    "author": "JusticeHui",
+    "key": "Math/Division",
+    "languages": [
+      "Python"
+    ],
+    "sources": {
+      "Python": "python/Math/Division.py"
+    }
+  },
+  {
+    "title": "빠른 거듭제곱",
+    "path": "python/Math/PowMod.py",
+    "original": "code/Math/PowMod.cpp",
+    "author": "JusticeHui",
+    "key": "Math/PowMod",
+    "languages": [
+      "Python"
+    ],
+    "sources": {
+      "Python": "python/Math/PowMod.py"
+    }
+  },
+  {
+    "title": "소수 판별, 소인수분해",
+    "path": "python/Math/Primes.py",
+    "original": "code/Math/Primes.cpp",
+    "author": "JusticeHui",
+    "key": "Math/Primes",
+    "languages": [
+      "Python"
+    ],
+    "sources": {
+      "Python": "python/Math/Primes.py"
+    }
+  },
+  {
+    "title": "에라토스테네스의 체, 소인수분해",
+    "path": "python/Math/Sieve.py",
+    "original": "code/Math/Sieve.cpp",
+    "author": "JusticeHui",
+    "key": "Math/Sieve",
+    "languages": [
+      "Python"
+    ],
+    "sources": {
+      "Python": "python/Math/Sieve.py"
+    }
+  },
+  {
+    "title": "선형 시간 체, 곱셈적 함수 전처리",
+    "path": "python/Math/LinearSieve.py",
+    "original": "code/Math/LinearSieve.cpp",
+    "author": "ahgus89",
+    "key": "Math/LinearSieve",
+    "languages": [
+      "C++"
+    ],
+    "sources": {
+      "C++": "mixed/cpp/Math/LinearSieve.hpp"
+    }
+  },
+  {
+    "title": "확장 유클리드 알고리즘",
+    "path": "python/Math/ExtendedEuclidean.py",
+    "original": "code/Math/ExtendedEuclidean.cpp",
+    "author": "JusticeHui",
+    "key": "Math/ExtendedEuclidean",
+    "languages": [
+      "Python"
+    ],
+    "sources": {
+      "Python": "python/Math/ExtendedEuclidean.py"
+    }
+  },
+  {
+    "title": "중국인의 나머지 정리",
+    "path": "python/Math/ChineseRemainderTheorem.py",
+    "original": "code/Math/ChineseRemainderTheorem.cpp",
+    "author": "JusticeHui",
+    "key": "Math/ChineseRemainderTheorem",
+    "languages": [
+      "Python",
+      "C++"
+    ],
+    "sources": {
+      "Python": "python/Math/ChineseRemainderTheorem.py",
+      "C++": "mixed/cpp/Math/ChineseRemainderTheorem.hpp"
+    }
+  },
+  {
+    "title": "이항 계수를 소수로 나눈 나머지",
+    "path": "python/Math/LucasTheorem.py",
+    "original": "code/Math/LucasTheorem.cpp",
+    "author": "JusticeHui",
+    "key": "Math/LucasTheorem",
+    "languages": [
+      "Python"
+    ],
+    "sources": {
+      "Python": "python/Math/LucasTheorem.py"
+    }
+  },
+  {
+    "title": "빠른 소수 판별, 소인수분해 - Miller Rabin, Pollard Rho",
+    "path": "python/Math/MillerRabin-PollardRho.py",
+    "original": "code/Math/MillerRabin-PollardRho.cpp",
+    "author": "JusticeHui",
+    "key": "Math/MillerRabin-PollardRho",
+    "languages": [
+      "C++"
+    ],
+    "sources": {
+      "C++": "mixed/cpp/Math/MillerRabin-PollardRho.hpp"
+    }
+  },
+  {
+    "title": "가우스 소거법 - RREF, 랭크, 행렬식, 역행렬",
+    "path": "python/Math/Matrix.py",
+    "original": "code/Math/Matrix.cpp",
+    "author": "JusticeHui",
+    "key": "Math/Matrix",
+    "languages": [
+      "Python",
+      "C++"
+    ],
+    "sources": {
+      "Python": "python/Math/Matrix.py",
+      "C++": "mixed/cpp/Math/Matrix.hpp"
+    }
+  },
+  {
+    "title": "다항식 곱셈(FFT)",
+    "path": "python/Math/Convolution.py",
+    "original": "code/Math/Convolution.cpp",
+    "author": "JusticeHui",
+    "key": "Math/Convolution",
+    "languages": [
+      "C++"
+    ],
+    "sources": {
+      "C++": "mixed/cpp/Math/Convolution.hpp"
+    }
+  },
+  {
+    "section": "문자열"
+  },
+  {
+    "title": "문자열 해싱",
+    "path": "python/String/Hashing.py",
+    "original": "code/String/Hashing.cpp",
+    "author": "JusticeHui",
+    "key": "String/Hashing",
+    "languages": [
+      "C++"
+    ],
+    "sources": {
+      "C++": "mixed/cpp/String/Hashing.hpp"
+    }
+  },
+  {
+    "title": "문자열 매칭 - KMP",
+    "path": "python/String/KMP.py",
+    "original": "code/String/KMP.cpp",
+    "author": "JusticeHui",
+    "key": "String/KMP",
+    "languages": [
+      "Python",
+      "C++"
+    ],
+    "sources": {
+      "Python": "python/String/KMP.py",
+      "C++": "mixed/cpp/String/KMP.hpp"
+    }
+  },
+  {
+    "title": "가장 긴 팰린드롬 부분 문자열 - Manacher",
+    "path": "python/String/Manacher.py",
+    "original": "code/String/Manacher.cpp",
+    "author": "JusticeHui",
+    "key": "String/Manacher",
+    "languages": [
+      "Python",
+      "C++"
+    ],
+    "sources": {
+      "Python": "python/String/Manacher.py",
+      "C++": "mixed/cpp/String/Manacher.hpp"
+    }
+  },
+  {
+    "title": "문자열 매칭 - Z",
+    "path": "python/String/Z.py",
+    "original": "code/String/Z.cpp",
+    "author": "JusticeHui",
+    "key": "String/Z",
+    "languages": [
+      "Python",
+      "C++"
+    ],
+    "sources": {
+      "Python": "python/String/Z.py",
+      "C++": "mixed/cpp/String/Z.hpp"
+    }
+  },
+  {
+    "title": "접미사 배열",
+    "path": "python/String/SuffixArray.py",
+    "original": "code/String/SuffixArray.cpp",
+    "author": "JusticeHui",
+    "key": "String/SuffixArray",
+    "languages": [
+      "C++"
+    ],
+    "sources": {
+      "C++": "mixed/cpp/String/SuffixArray.hpp"
+    }
+  },
+  {
+    "section": "계산 기하"
+  },
+  {
+    "title": "2차원 계산 기하 템플릿 + CCW",
+    "path": "python/Geometry/Template.py",
+    "original": "code/Geometry/Template.cpp",
+    "author": "JusticeHui",
+    "key": "Geometry/Template",
+    "languages": [
+      "Python",
+      "C++"
+    ],
+    "sources": {
+      "Python": "python/Geometry/Template.py",
+      "C++": "mixed/cpp/Geometry/Template.hpp"
+    }
+  },
+  {
+    "title": "360도 각도 정렬",
+    "path": "python/Geometry/PolarSort.py",
+    "original": "code/Geometry/PolarSort.cpp",
+    "author": "JusticeHui",
+    "key": "Geometry/PolarSort",
+    "languages": [
+      "Python",
+      "C++"
+    ],
+    "sources": {
+      "Python": "python/Geometry/PolarSort.py",
+      "C++": "mixed/cpp/Geometry/PolarSort.hpp"
+    }
+  },
+  {
+    "title": "다각형 넓이",
+    "path": "python/Geometry/PolygonArea.py",
+    "original": "code/Geometry/PolygonArea.cpp",
+    "author": "JusticeHui",
+    "key": "Geometry/PolygonArea",
+    "languages": [
+      "Python"
+    ],
+    "sources": {
+      "Python": "python/Geometry/PolygonArea.py"
+    }
+  },
+  {
+    "title": "선분 교차 판정",
+    "path": "python/Geometry/SegmentIntersection.py",
+    "original": "code/Geometry/SegmentIntersection.cpp",
+    "author": "JusticeHui",
+    "key": "Geometry/SegmentIntersection",
+    "languages": [
+      "Python",
+      "C++"
+    ],
+    "sources": {
+      "Python": "python/Geometry/SegmentIntersection.py",
+      "C++": "mixed/cpp/Geometry/SegmentIntersection.hpp"
+    }
+  },
+  {
+    "title": "다각형 내부 판별",
+    "path": "python/Geometry/PointInPolygon.py",
+    "original": "code/Geometry/PointInPolygon.cpp",
+    "author": "JusticeHui",
+    "key": "Geometry/PointInPolygon",
+    "languages": [
+      "Python",
+      "C++"
+    ],
+    "sources": {
+      "Python": "python/Geometry/PointInPolygon.py",
+      "C++": "mixed/cpp/Geometry/PointInPolygon.hpp"
+    }
+  },
+  {
+    "title": "볼록 껍질 - Monotone Chain",
+    "path": "python/Geometry/ConvexHull.py",
+    "original": "code/Geometry/ConvexHull.cpp",
+    "author": "JusticeHui",
+    "key": "Geometry/ConvexHull",
+    "languages": [
+      "C++"
+    ],
+    "sources": {
+      "C++": "mixed/cpp/Geometry/ConvexHull.hpp"
+    }
+  },
+  {
+    "title": "가장 먼 두 점 - Rotating Calipers",
+    "path": "python/Geometry/Calipers.py",
+    "original": "code/Geometry/Calipers.cpp",
+    "author": "JusticeHui",
+    "key": "Geometry/Calipers",
+    "languages": [
+      "C++"
+    ],
+    "sources": {
+      "C++": "mixed/cpp/Geometry/Calipers.hpp"
+    }
+  },
+  {
+    "title": "볼록 다각형 내부 판별",
+    "path": "python/Geometry/PointInConvexPolygon.py",
+    "original": "code/Geometry/PointInConvexPolygon.cpp",
+    "author": "JusticeHui",
+    "key": "Geometry/PointInConvexPolygon",
+    "languages": [
+      "C++"
+    ],
+    "sources": {
+      "C++": "mixed/cpp/Geometry/PointInConvexPolygon.hpp"
+    }
+  },
+  {
+    "section": "기타"
+  },
+  {
+    "title": "가장 긴 증가하는 부분 수열(LIS)",
+    "path": "python/Misc/LIS.py",
+    "original": "code/Misc/LIS.cpp",
+    "author": "JusticeHui",
+    "key": "Misc/LIS",
+    "languages": [
+      "Python",
+      "C++"
+    ],
+    "sources": {
+      "Python": "python/Misc/LIS.py",
+      "C++": "mixed/cpp/Misc/LIS.hpp"
+    }
+  },
+  {
+    "title": "이분 탐색",
+    "path": "python/Misc/BinarySearch.py",
+    "original": "code/Misc/BinarySearch.cpp",
+    "author": "JusticeHui",
+    "key": "Misc/BinarySearch",
+    "languages": [
+      "Python"
+    ],
+    "sources": {
+      "Python": "python/Misc/BinarySearch.py"
+    }
+  },
+  {
+    "title": "삼분 탐색",
+    "path": "python/Misc/TernarySearch.py",
+    "original": "code/Misc/TernarySearch.cpp",
+    "author": "JusticeHui",
+    "key": "Misc/TernarySearch",
+    "languages": [
+      "Python"
+    ],
+    "sources": {
+      "Python": "python/Misc/TernarySearch.py"
+    }
+  },
+  {
+    "title": "Python 랜덤, 순서 통계, 비트마스킹",
+    "path": "python/Misc/Cpp-Grammer.py",
+    "original": "code/Misc/Cpp-Grammer.cpp",
+    "author": "JusticeHui",
+    "key": "Misc/Cpp-Grammer",
+    "languages": [
+      "Python"
+    ],
+    "sources": {
+      "Python": "python/Misc/Cpp-Grammer.py"
+    }
+  },
+  {
+    "title": "빠른 입력(Fast Input from STDIN)",
+    "path": "python/Misc/FastIO.py",
+    "original": "code/Misc/FastIO.cpp",
+    "author": "cgiosy",
+    "key": "Misc/FastIO",
+    "languages": [
+      "Python",
+      "C++"
+    ],
+    "sources": {
+      "Python": "python/Misc/FastIO.py",
+      "C++": "mixed/cpp/Misc/FastIO.hpp"
+    }
+  }
+]

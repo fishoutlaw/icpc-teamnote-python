@@ -1,6 +1,4 @@
-"""원본: code/DataStructure/SegmentTree.cpp.
-0-based, [l,r). Build O(N), set/sum O(log N), space O(N).
-"""
+# 점 대입과 구간 [l,r) 합 O(log N). 초기화 O(N).
 
 
 class SegmentTree:

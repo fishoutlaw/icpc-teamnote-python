@@ -1,6 +1,6 @@
 #pragma once
 #include "Template.hpp"
-// Based on code/Geometry/Calipers.cpp. Strict CCW hull, O(N), O(1) space.
+// 끝점 중복·일직선 내부점 없는 반시계 볼록 껍질의 가장 먼 두 점. O(N).
 namespace tn {
 optional<pair<Point,Point>> calipers(const vector<Point>& h) {
     int n=h.size(); if (!n) return nullopt;

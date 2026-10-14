@@ -1,6 +1,6 @@
 #pragma once
 #include "../common.hpp"
-// Based on code/String/KMP.cpp. O(N+M), auxiliary O(M). Byte offsets.
+// 바이트 패턴 검색 O(N+M). 일치 시작 위치를 반환한다.
 namespace tn {
 vector<int> prefix_function(const string& p) {
     vector<int> fail(p.size());
@@ -19,6 +19,6 @@ vector<int> kmp(const string& s,const string& p) {
         if (s[i]==p[j]) ++j;
         if (j==int(p.size())) result.push_back(i-j+1),j=fail[j-1];
     }
-    return result; // empty pattern matches all N+1 boundaries
+    return result; // 빈 패턴은 모든 N+1개 경계에 일치한다.
 }
 }

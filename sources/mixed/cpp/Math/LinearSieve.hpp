@@ -1,6 +1,6 @@
 #pragma once
 #include "../common.hpp"
-// Based on code/Math/LinearSieve.cpp (ahgus89). O(N) time/space.
+// N까지 소수·최소 소인수·오일러 함수·뫼비우스 함수·약수 개수·합을 구한다. O(N).
 namespace tn {
 struct LinearSieve {
     vector<int> primes,spf,phi,mu,tau; vector<ll> sigma;

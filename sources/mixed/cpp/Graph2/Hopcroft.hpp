@@ -1,6 +1,6 @@
 #pragma once
 #include "../common.hpp"
-// Based on code/Graph2/Hopcroft.cpp. Iterative O((V+E)sqrt(V)), space O(V+E).
+// 층별 증가 경로를 찾는 최대 이분 매칭 O((V+E)sqrt(V)).
 namespace tn {
 struct MatchingResult { vector<int> left,right,cover_left,cover_right; };
 MatchingResult hopcroft_karp(const vector<vector<int>>& g,int m) {
@@ -44,6 +44,6 @@ MatchingResult hopcroft_karp(const vector<vector<int>>& g,int m) {
     }
     for (int v=0;v<n;v++) if (!sl[v]) a.push_back(v);
     for (int u=0;u<m;u++) if (sr[u]) b.push_back(u);
-    return {le,ri,a,b}; // minimum vertex cover = cover_left + cover_right
+    return {le,ri,a,b}; // 최소 정점 커버는 cover_left와 cover_right의 합집합.
 }
 }

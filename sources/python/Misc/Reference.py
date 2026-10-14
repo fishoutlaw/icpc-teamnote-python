@@ -1,7 +1,4 @@
-"""원본: main.tex inline floor-sum and mathematical reference notes.
-floor_sum: sum floor((a*i+b)/m), i=0..n-1; n>=0, m>0. O(log m).
-Simpson O(steps), Newton O(iterations), Stirling/Bell O(n*k), O(k) space.
-"""
+# 바닥 함수 합·카탈란 수·수치 적분·근 찾기·집합 분할 수.
 from math import comb
 
 
@@ -34,7 +31,7 @@ def simpson(f, a, b, steps=1000):
 
 
 def newton(f, derivative, x, tolerance=1e-12, iterations=100):
-    """Local root search; may fail to converge. Verify the residual."""
+    # 뉴턴법으로 근을 찾는다. 수렴 실패 가능: 결과의 잔차를 확인한다.
     for _ in range(iterations):
         value = f(x)
         if abs(value) <= tolerance:

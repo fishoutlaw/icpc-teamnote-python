@@ -1,9 +1,9 @@
 #pragma once
 #include "Template.hpp"
-// Based on code/Geometry/SegmentIntersection.cpp. O(1), degenerate segments supported.
+// 점 선분까지 처리하는 선분 교차 판정 O(1).
 namespace tn {
 struct Intersection {
-    int kind; i128 xnum=0,ynum=0,den=1; // 0:none, -1:interval, 1:unique exact rational
+    int kind; i128 xnum=0,ynum=0,den=1; // 0: 없음, -1: 구간 겹침, 1: 유일한 교점(정수 비율).
 };
 Intersection segment_intersection(Point a,Point b,Point c,Point d) {
     Point u=sub(b,a),v=sub(d,c),w=sub(c,a); i128 det=cross(u,v);

@@ -1,7 +1,7 @@
 #pragma once
 #include "../common.hpp"
-// Based on code/Graph2/BCC.cpp. Iterative Tarjan O(V+E) time/space.
-// Undirected multigraph, no self loops. Groups share articulation vertices.
+// 반복형 타잔으로 단절점·단절선·이중 연결 요소를 구한다. O(V+E).
+// 무향 다중 그래프, 자기 루프 금지. 단절점은 여러 묶음에 속한다.
 namespace tn {
 struct BCCResult { vector<int> cuts,bridges; vector<vector<int>> groups; };
 BCCResult biconnected_components(int n,const vector<pair<int,int>>& edges) {
@@ -47,6 +47,6 @@ BCCResult biconnected_components(int n,const vector<pair<int,int>>& edges) {
         }
     }
     for (int v=0;v<n;v++) if (cut[v]) out.cuts.push_back(v);
-    return out; // bridges are original edge IDs; isolated vertices are groups
+    return out; // 단절선은 입력 간선 번호, 고립점도 별도 묶음.
 }
 }

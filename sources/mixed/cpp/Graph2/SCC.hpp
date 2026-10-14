@@ -1,6 +1,6 @@
 #pragma once
 #include "../common.hpp"
-// Based on code/Graph2/SCC.cpp. Iterative Kosaraju, O(V+E) time/space.
+// 반복형 코사라주의 강한 연결 요소 분해 O(V+E).
 namespace tn {
 pair<vector<int>,vector<vector<int>>> strongly_connected_components(
     const vector<vector<int>>& g) {
@@ -23,6 +23,6 @@ pair<vector<int>,vector<vector<int>>> strongly_connected_components(
             for (int u:rev[v]) if (comp[u]==-1) comp[u]=id,st.push_back(u);
         }
     }
-    return {comp,groups}; // IDs in topological order
+    return {comp,groups}; // 요소 번호는 축약 그래프의 위상 순서.
 }
 }

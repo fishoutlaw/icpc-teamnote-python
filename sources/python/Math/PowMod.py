@@ -1,6 +1,4 @@
-"""원본: code/Math/PowMod.cpp. O(log exponent) modular multiplications.
-Python pow avoids fixed-width overflow. exponent >= 0, modulus >= 1.
-"""
+# 모듈러 거듭제곱 O(log 지수). 지수는 0 이상, 모듈러스는 1 이상.
 
 
 def pow_mod(base, exponent, modulus):

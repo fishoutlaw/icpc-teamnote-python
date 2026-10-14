@@ -1,7 +1,5 @@
-"""원본: code/Graph2/Hopcroft.cpp. Left adjacency to right IDs 0..m-1.
-Iterative Hopcroft-Karp O((V+E) sqrt(V)), space O(V+E).
-Returns left/right matching arrays and minimum vertex cover (left IDs,right IDs).
-"""
+# 왼쪽에서 오른쪽 정점 번호로 향하는 인접 리스트의 최대 이분 매칭.
+# 양쪽 매칭 배열과 최소 정점 커버를 반환한다. O((V+E) sqrt(V)).
 from collections import deque
 
 

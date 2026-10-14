@@ -1,4 +1,4 @@
-"""원본: code/String/Z.cpp. O(N) time/space. z[0]=N, empty -> []."""
+# 각 위치에서 전체 문자열의 접두사와 일치하는 길이. O(N), z[0]=N.
 
 
 def z_function(text):

@@ -1,6 +1,4 @@
-"""원본: code/Math/ExtendedEuclidean.cpp. O(log max(|a|,|b|)), O(1) integers.
-Returns (g,x,y): ax+by=g=gcd(a,b)>=0, supports negative and zero inputs.
-"""
+# ax+by=gcd(a,b)를 만족하는 (g,x,y)를 구한다. 음수·0도 처리한다.
 
 
 def extended_gcd(a, b):

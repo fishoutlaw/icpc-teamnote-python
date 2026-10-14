@@ -1,6 +1,5 @@
-"""원본: code/Graph2/SCC.cpp. Iterative Kosaraju, 0-based adjacency.
-O(V+E) time/space. Component IDs are in topological order.
-"""
+# 반복형 코사라주로 강한 연결 요소를 구한다. O(V+E).
+# 요소 번호는 축약 그래프의 위상 순서다.
 
 
 def strongly_connected_components(graph):

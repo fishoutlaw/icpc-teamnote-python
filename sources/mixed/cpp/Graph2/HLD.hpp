@@ -1,7 +1,7 @@
 #pragma once
 #include "../common.hpp"
-// Based on code/Graph2/HLD.cpp. Iterative O(N) build; path O(log N) intervals.
-// Combine with SegmentTree: point set O(log N), path sum O(log^2 N).
+// 트리 경로를 O(log N)개 구간으로 분해한다. 초기화 O(N).
+// 세그먼트 트리와 결합: 점 갱신 O(log N), 경로 합 O(log^2 N).
 namespace tn {
 struct HLD {
     vector<int> parent,depth,size,head,pos;
@@ -28,14 +28,14 @@ struct HLD {
         }
     }
     vector<pair<int,int>> path_ranges(int u,int v,bool edges=false) const {
-        vector<pair<int,int>> ranges; // unordered; commutative operations only
+        vector<pair<int,int>> ranges; // 구간 순서 미보장: 교환 가능한 연산만 사용한다.
         while (head[u]!=head[v]) {
             if (depth[head[u]]<depth[head[v]]) swap(u,v);
             ranges.push_back({pos[head[u]],pos[u]+1}); u=parent[head[u]];
         }
         if (depth[u]>depth[v]) swap(u,v);
         int l=pos[u]+edges,r=pos[v]+1; if (l<r) ranges.push_back({l,r});
-        return ranges; // edge values stored at the deeper endpoint
+        return ranges; // 간선 값은 더 깊은 정점 위치에 저장한다.
     }
     pair<int,int> subtree_range(int v) const { return {pos[v],pos[v]+size[v]}; }
 };

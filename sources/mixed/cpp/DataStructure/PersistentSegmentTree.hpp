@@ -1,7 +1,6 @@
 #pragma once
 #include "../common.hpp"
-// Based on code/DataStructure/PersistentSegmentTree.cpp.
-// Frequency versions on [0,n). O(log N) insert/kth; O(Q log N) space.
+// 빈도 트리의 버전 보존. 삽입·k번째 질의 O(log N), 공간 O(Q log N).
 namespace tn {
 struct PersistentSegmentTree {
     struct Node { int l=0,r=0,count=0; };
@@ -23,7 +22,7 @@ struct PersistentSegmentTree {
     int kth(int before,int after,int k) const {
         int a=roots.at(before),b=roots.at(after),l=0,r=n;
         assert(1<=k && k<=nodes[b].count-nodes[a].count);
-        // Version difference must have nonnegative counts; k is 1-based.
+        // 버전 간 빈도 차는 음수가 아니어야 하며 k는 1부터 시작한다.
         while (r-l>1) {
             int m=(l+r)/2, count=nodes[nodes[b].l].count-nodes[nodes[a].l].count;
             if (k<=count) a=nodes[a].l,b=nodes[b].l,r=m;

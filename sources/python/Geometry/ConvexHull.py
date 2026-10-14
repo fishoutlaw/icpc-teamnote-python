@@ -1,6 +1,4 @@
-"""원본: code/Geometry/ConvexHull.cpp. Monotone chain replaces Graham scan.
-O(N log N), O(N) space. CCW hull; no repeated end or collinear interior points.
-"""
+# 단조 체인 볼록 껍질 O(N log N). 반시계 방향, 끝점 중복·일직선 내부점 제거.
 
 
 def convex_hull(points):

@@ -1,11 +1,9 @@
-"""원본: code/Sorting/STL.cpp. Sorted list required; 0-based positions.
-bisect_left/right O(log N); inserting into a list is O(N).
-"""
+# 정렬 배열의 경계 탐색 O(log N). 리스트 삽입은 O(N).
 from bisect import bisect_left, bisect_right
 
 
 def equal_range(values, x):
-    """Half-open interval containing all occurrences of x."""
+    # 정렬 배열에서 x가 나타나는 구간 [왼쪽, 오른쪽)을 구한다.
     return bisect_left(values, x), bisect_right(values, x)
 
 
@@ -15,7 +13,7 @@ def contains(values, x):
 
 
 def nth_element(values, k):
-    """In-place randomized quickselect. Expected O(N), worst O(N^2), O(1) space."""
+    # 배열을 직접 바꾸어 k번째 값을 선택한다. 기대 O(N), 최악 O(N^2).
     from random import randrange
     if not 0 <= k < len(values):
         raise IndexError(k)

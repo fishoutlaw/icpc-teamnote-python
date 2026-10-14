@@ -1,7 +1,7 @@
 #pragma once
 #include "../common.hpp"
-// Based on code/DataStructure/ConvexHullTrick.cpp. Max queries.
-// Slopes/intercepts/x within +/-1e9; use negated lines for minima.
+// 직선 최댓값 질의. 단조형과 Li Chao 트리를 제공한다.
+// 기울기·절편·x의 절댓값은 10^9 이하. 최솟값은 부호를 뒤집는다.
 namespace tn {
 struct Line {
     ll a,b; int id=-1;
@@ -9,7 +9,7 @@ struct Line {
 };
 struct MonotoneCHT {
     deque<Line> q; optional<ll> last_a,last_x;
-    void add(ll a,ll b,int id=-1) { // nondecreasing slopes, amortized O(1)
+    void add(ll a,ll b,int id=-1) { // 기울기 비감소 순서, 분할 상환 O(1).
         assert(!last_a || a>=*last_a); last_a=a;
         if (!q.empty() && q.back().a==a) {
             if (q.back().b>=b) return; q.pop_back();
@@ -21,13 +21,13 @@ struct MonotoneCHT {
         }
         q.push_back({a,b,id});
     }
-    pair<ll,int> query(ll x) { // nondecreasing x, amortized O(1)
+    pair<ll,int> query(ll x) { // 질의 x 비감소 순서, 분할 상환 O(1).
         assert(!q.empty() && (!last_x || x>=*last_x)); last_x=x;
         while (q.size()>1 && q[0].at(x)<=q[1].at(x)) q.pop_front();
         return {q.front().at(x),q.front().id};
     }
 };
-struct LiChao { // arbitrary order, fixed integer [lo,hi], O(log range)
+struct LiChao { // 임의 순서, 고정 정수 구간 [lo,hi], O(log 범위).
     struct Node { Line line; int l=-1,r=-1; };
     ll lo,hi; vector<Node> t;
     LiChao(ll lo,ll hi):lo(lo),hi(hi) { assert(lo<=hi); }

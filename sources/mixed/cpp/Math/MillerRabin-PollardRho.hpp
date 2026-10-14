@@ -1,7 +1,7 @@
 #pragma once
 #include "../common.hpp"
-// Based on code/Math/MillerRabin-PollardRho.cpp. Full uint64_t domain.
-// MR deterministic; rho randomized expected ~sqrt(smallest factor) steps.
+// uint64_t 전체 범위의 소수 판별·소인수분해.
+// 밀러 라빈은 확정 판별, 폴라드 로는 기대 O(sqrt(최소 소인수)).
 namespace tn {
 u64 mul_mod(u64 a,u64 b,u64 m) { return u128(a)*b%m; }
 u64 pow_mod64(u64 a,u64 b,u64 m) {
@@ -22,7 +22,7 @@ bool is_prime64(u64 n) {
     }
     return true;
 }
-u64 pollard_rho(u64 n) { // composite n>1
+u64 pollard_rho(u64 n) { // n>1인 합성수에 사용한다.
     if (!(n&1)) return 2;
     static mt19937_64 rng(20261014);
     while (true) {

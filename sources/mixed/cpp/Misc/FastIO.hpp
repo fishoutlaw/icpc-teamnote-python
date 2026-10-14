@@ -1,8 +1,8 @@
 #pragma once
 #include "../common.hpp"
-// Based on code/Misc/FastIO.cpp (cgiosy). Prefer cin with sync disabled first.
-// Optional buffered parser: signed ll including LLONG_MIN, O(bytes), 64 KiB buffer.
-// Input must be valid decimal integers separated by whitespace, within ll range.
+// 빠른 정수 입력. 먼저 동기화를 끈 cin 사용을 고려한다.
+// 64KiB 버퍼 정수 입력, LLONG_MIN 포함. 시간 O(입력 크기).
+// 공백으로 구분한 ll 범위의 올바른 십진 정수만 입력한다.
 namespace tn {
 struct FastInput {
     FILE* file; char buffer[1<<16]; size_t pos=0,size=0;
@@ -19,8 +19,6 @@ struct FastInput {
         value=negative?(x==(1ULL<<63)?LLONG_MIN:-ll(x)):ll(x); return true;
     }
 };
-// Standard alternative in main():
-// ios::sync_with_stdio(false); cin.tie(nullptr);
-// ll x; while (cin>>x) cout<<x<<'\n';
-// Do not mix FastInput/fread and unsynchronized cin on the same stream.
+// 표준 입력은 동기화를 끈 cin으로 대체할 수 있다.
+// 같은 입력에서 FastInput/fread와 비동기 cin을 혼용하지 않는다.
 }

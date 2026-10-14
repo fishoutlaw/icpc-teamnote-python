@@ -1,6 +1,4 @@
-"""원본: code/Geometry/PolygonArea.cpp. Simple polygon in boundary order.
-Returns twice area (exact integer), O(N) time, O(1) auxiliary space.
-"""
+# 경계 순서로 주어진 단순 다각형의 넓이 두 배를 정수로 구한다. O(N).
 
 
 def polygon_area2(points):

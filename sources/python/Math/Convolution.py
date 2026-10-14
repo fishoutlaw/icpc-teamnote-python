@@ -1,11 +1,6 @@
-"""원본: code/Math/Convolution.cpp.
-FFT/NTT and XOR/OR/AND convolution: O(N log N), O(N) space.
-FFT multiply is approximate: large coefficients can round incorrectly.
-multiply_mod uses exact NTT/CRT for arbitrary positive moduli.
-If the CRT coefficient bound or supported length is exceeded, it falls back
-to exact O(len(a)*len(b)) multiplication. No floating rounding in multiply_mod.
-Outputs keep all len(a)+len(b)-1 coefficients (including trailing zero).
-"""
+# FFT·NTT·비트 합성곱 O(N log N). FFT는 큰 계수에서 반올림 오차가 생길 수 있다.
+# multiply_mod는 정확한 NTT/CRT, 범위 초과 시 O(len(a)·len(b)) 직접 곱셈.
+# 뒤쪽 0을 포함한 len(a)+len(b)-1개 계수를 반환한다.
 from cmath import exp, pi
 
 
@@ -91,7 +86,7 @@ def multiply_mod(a, b, mod=998244353, root=3):
 
 
 def bitwise_convolution(a, b, kind='xor'):
-    """Integer arrays, same positive power-of-two length; exact arithmetic."""
+    # 같은 2의 거듭제곱 길이를 가진 정수 배열의 정확한 비트 합성곱.
     n = len(a)
     if n != len(b) or not n or n & (n - 1) or kind not in ('xor', 'or', 'and'):
         raise ValueError('invalid length or transform kind')

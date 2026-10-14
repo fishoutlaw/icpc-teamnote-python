@@ -1,6 +1,5 @@
-"""원본: code/Misc/LIS.cpp. Strict LIS values, O(N log N), O(N) space.
-For nondecreasing subsequence use bisect_right instead of bisect_left.
-"""
+# 엄격히 증가하는 최장 부분 수열 O(N log N).
+# 같은 값도 허용하려면 bisect_left를 bisect_right로 바꾼다.
 from bisect import bisect_left
 
 

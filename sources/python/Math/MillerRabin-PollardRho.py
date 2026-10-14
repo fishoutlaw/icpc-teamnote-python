@@ -1,8 +1,5 @@
-"""원본: code/Math/MillerRabin-PollardRho.cpp.
-Deterministic Miller-Rabin for 0 <= n < 2^64; larger inputs rejected.
-Pollard rho randomized expected ~O(p^0.5) steps for smallest factor p.
-Miller-Rabin O(log n) modular multiplications per base, not bit operations.
-"""
+# 0 이상 2^64 미만의 소수 판별·소인수분해.
+# 밀러 라빈은 확정 판별, 폴라드 로는 최소 소인수 p에 대해 기대 O(sqrt(p)).
 from collections import Counter
 from math import gcd
 from random import randrange

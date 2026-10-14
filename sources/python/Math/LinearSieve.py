@@ -1,7 +1,4 @@
-"""원본: code/Math/LinearSieve.cpp. O(N) arithmetic operations / space.
-Returns primes, spf, phi, mu, tau (divisor count), sigma (divisor sum).
-All tables include index N. Python integer bit costs are additional.
-"""
+# N까지 소수·최소 소인수·오일러 함수·뫼비우스 함수·약수 개수·합을 구한다. O(N).
 
 
 def linear_sieve(n):

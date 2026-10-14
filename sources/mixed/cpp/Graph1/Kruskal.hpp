@@ -1,6 +1,6 @@
 #pragma once
 #include "../common.hpp"
-// Based on code/Graph1/Kruskal.cpp. DSU amortized O(alpha(N)); MST O(E log E+V).
+// 가중치순으로 간선을 선택하는 최소 신장 포리스트. O(V+E log E).
 namespace tn {
 struct DSU {
     vector<int> parent,size; int components;
@@ -21,6 +21,6 @@ pair<ll,vector<tuple<ll,int,int>>> kruskal(int n,vector<tuple<ll,int,int>> edges
     sort(edges.begin(),edges.end()); DSU d(n); ll cost=0;
     vector<tuple<ll,int,int>> chosen;
     for (auto [w,u,v]:edges) if (d.unite(u,v)) cost+=w,chosen.push_back({w,u,v});
-    return {cost,chosen}; // forest if disconnected; edges are (weight,u,v)
+    return {cost,chosen}; // 비연결이면 포리스트. 간선은 (가중치,u,v).
 }
 }

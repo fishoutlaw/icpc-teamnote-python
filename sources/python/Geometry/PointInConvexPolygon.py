@@ -1,7 +1,5 @@
-"""원본: code/Geometry/PointInConvexPolygon.cpp. O(log N), O(1) space.
-Strict CCW convex hull without repeated endpoint (use convex_hull output).
-Boundary included; 0/1/2-vertex degenerate hulls supported.
-"""
+# 반시계 볼록 다각형 내부 판별 O(log N), 경계 포함.
+# 끝점 중복·일직선 내부점 제거. 정점이 0~2개인 경우도 처리한다.
 
 
 def point_in_convex_polygon(hull, p):

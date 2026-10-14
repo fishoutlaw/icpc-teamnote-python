@@ -4,6 +4,7 @@ import json
 import argparse
 from pypdf import PdfReader
 import pdfplumber
+from pdf_checks import verify_sources
 
 ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser(description=__doc__)
@@ -18,12 +19,10 @@ assert '\ufffd' not in text
 assert '문제 풀이 체크리스트' in text
 assert 'C++17' in text and '[PY/C++]' in text
 events = json.loads((ROOT / 'mixed/manifest.json').read_text(encoding='utf-8'))
-count = 0
-for event in events:
-    for source in event.get('sources', {}).values():
-        assert source in text, source
-        count += 1
+paths = [source for event in events for source in event.get('sources', {}).values()]
+count = len(paths)
 assert count == 67
+verify_sources(reader, ROOT, paths + ['mixed/cpp/common.hpp', 'python/Misc/Reference.py'])
 assert 'common.hpp' in (ROOT / f'mixed{suffix}.tex').read_text(encoding='utf-8')
 with pdfplumber.open(path) as doc:
     code_chars = [c for page in doc.pages for c in page.chars if 'Consolas' in c['fontname']]

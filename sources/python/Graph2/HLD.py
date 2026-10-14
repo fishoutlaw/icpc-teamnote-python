@@ -1,9 +1,6 @@
-"""원본: code/Graph2/HLD.cpp. 0-based connected undirected tree.
-Build O(N), path decomposition O(log N), space O(N).
-Use SegmentTree with pos[v]: point set O(log N), path sum O(log^2 N).
-path_ranges returns unordered half-open intervals (commutative queries only).
-For edge values store at child position and pass edges=True.
-"""
+# 연결된 무향 트리의 경로를 O(log N)개 구간으로 분해한다. 초기화 O(N).
+# 구간은 [l,r), 순서 미보장: 교환 가능한 연산에만 사용한다.
+# 간선 값은 자식 위치에 저장하고 edges=True로 질의한다.
 
 
 class HLD:

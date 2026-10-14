@@ -1,6 +1,5 @@
-"""원본: code/String/Hashing.cpp. Build O(N), get O(1), space O(N).
-0-based [l,r). Hash equality can collide; verify strings or use two moduli.
-"""
+# 구간 [l,r) 해시. 전처리 O(N), 질의 O(1).
+# 충돌 가능: 실제 문자열을 확인하거나 모듈러스를 두 개 사용한다.
 
 
 class Hashing:

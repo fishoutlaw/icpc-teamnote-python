@@ -1,6 +1,6 @@
 #pragma once
 #include "../common.hpp"
-// Based on code/Graph2/LCA.cpp. Connected undirected tree; O(N log N) build/space.
+// 연결된 무향 트리의 최소 공통 조상. 전처리 O(N log N), 질의 O(log N).
 namespace tn {
 struct LCA {
     vector<int> depth; vector<vector<int>> up;
@@ -15,7 +15,7 @@ struct LCA {
         assert(int(order.size())==n);
         for (int k=1;k<levels;k++) for (int v=0;v<n;v++) up[k][v]=up[k-1][up[k-1][v]];
     }
-    int query(int u,int v) const { // O(log N)
+    int query(int u,int v) const { // 최소 공통 조상 질의 O(log N).
         if (depth[u]<depth[v]) swap(u,v);
         int diff=depth[u]-depth[v];
         for (int k=0;k<int(up.size());k++) if (diff>>k&1) u=up[k][u];

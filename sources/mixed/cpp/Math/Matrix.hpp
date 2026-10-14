@@ -1,8 +1,8 @@
 #pragma once
 #include "../common.hpp"
-// Based on code/Math/Matrix.cpp. RREF/rank/determinant/inverse, O(R^2 C).
-// RealOps is approximate (absolute EPS); Python default uses exact Fraction.
-// ModOps + prime modulus gives exact finite-field results in both languages.
+// 가우스 조던 소거: 기약 행렬·계수·행렬식·역행렬. O(행^2·열).
+// RealOps는 절대 오차 EPS를 쓰는 근사 연산. Python 기본은 정확한 Fraction.
+// 소수 모듈러스의 ModOps는 정확한 유한체 연산.
 namespace tn {
 struct RealOps {
     using T=long double; T eps=1e-12L;
@@ -13,7 +13,7 @@ struct RealOps {
     T inv(T x) const { return 1/x; }
     bool better(T a,T b) const { return abs(a)>abs(b); }
 };
-struct ModOps { // prime 2 <= mod <= 2^31-1
+struct ModOps { // 소수 2<=mod<=2^31-1.
     using T=ll; ll mod;
     T norm(T x) const { x%=mod; return x<0?x+mod:x; }
     bool zero(T x) const { return x==0; }

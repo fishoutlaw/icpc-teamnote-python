@@ -1,6 +1,5 @@
-"""원본: code/String/KMP.cpp. O(N+M) time, O(M) auxiliary space.
-0-based match positions; empty pattern matches all N+1 boundaries.
-"""
+# 접두사 실패 함수를 이용한 패턴 검색 O(N+M). 일치 시작 위치를 반환한다.
+# 빈 패턴은 모든 N+1개 경계에 일치한다.
 
 
 def prefix_function(pattern):

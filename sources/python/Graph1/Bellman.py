@@ -1,6 +1,4 @@
-"""원본: code/Graph1/Bellman.cpp. 0-based edges (u,v,w).
-O(VE) time, O(V) space. Return None for a reachable negative cycle.
-"""
+# 간선 (u,v,w)를 반복 완화한다. O(VE). 도달 가능한 음수 사이클은 None.
 from math import inf
 
 

@@ -1,8 +1,4 @@
-"""원본: code/Misc/FastIO.cpp. Signed whitespace-separated integers.
-read_ints: O(input bytes) time/memory, fast when input fits in memory.
-iter_ints: O(input bytes) time, O(chunk_size) memory, slower Python loop.
-write_lines: O(output size) time/memory. No import-time input/output.
-"""
+# 공백으로 구분한 정수 입출력. 전체 읽기는 빠르고, 분할 읽기는 메모리를 절약한다.
 
 import sys
 
@@ -14,7 +10,7 @@ def read_ints(stream=None):
 
 
 def iter_ints(stream=None, chunk_size=1 << 16):
-    """Input must be valid decimal integers separated by whitespace."""
+    # 입력은 공백으로 구분한 올바른 십진 정수여야 한다.
     if stream is None:
         stream = sys.stdin.buffer
     if chunk_size <= 0:

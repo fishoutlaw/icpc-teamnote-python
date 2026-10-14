@@ -1,6 +1,6 @@
 #pragma once
 #include "../common.hpp"
-// Based on code/String/SuffixArray.cpp. Doubling/counting sort O(N log N), O(N) space.
+// 접미사 배열과 인접 공통 접두사 길이. 두 배 확장·계수 정렬 O(N log N).
 namespace tn {
 pair<vector<int>,vector<int>> suffix_array(const string& s) {
     int n=s.size(); if (!n) return {{},{}};
@@ -31,6 +31,6 @@ pair<vector<int>,vector<int>> suffix_array(const string& s) {
         int j=sa[pos-1]; while (i+len<n && j+len<n && s[i+len]==s[j+len]) ++len;
         lcp[pos]=len; if (len) --len;
     }
-    return {sa,lcp}; // lcp[i]=LCP(sa[i-1],sa[i]), lcp[0]=0. Byte offsets.
+    return {sa,lcp}; // lcp[i]=LCP(sa[i-1],sa[i]), lcp[0]=0. 바이트 인덱스.
 }
 }

@@ -1,7 +1,7 @@
 #pragma once
 #include "../common.hpp"
-// Based on code/String/Manacher.cpp. O(N) time/space; byte string.
-// 2*N+1 radii; radius = original palindrome length. Sentinel cannot collide.
+// 바이트 문자열의 팰린드롬 반지름 O(N).
+// 2N+1개 반지름은 원문 팰린드롬 길이. 구분자는 입력과 충돌하지 않는다.
 namespace tn {
 vector<int> manacher(const string& s) {
     vector<int> v{-1}; for (unsigned char c:s) v.push_back(c),v.push_back(-1);

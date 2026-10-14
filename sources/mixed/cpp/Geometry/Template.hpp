@@ -1,7 +1,7 @@
 #pragma once
 #include "../common.hpp"
-// Based on code/Geometry/Template.cpp. Integer coordinates |x|,|y|<=1e9.
-// Exact predicates via i128; O(1). Distances below are squared.
+// 정수 좌표의 절댓값은 10^9 이하.
+// i128로 정확한 방향 판정 O(1). 거리는 제곱값이다.
 namespace tn {
 using Point=pair<ll,ll>;
 Point add(Point a,Point b) { return {a.first+b.first,a.second+b.second}; }

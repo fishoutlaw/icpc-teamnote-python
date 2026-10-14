@@ -1,6 +1,4 @@
-"""원본: code/Geometry/PolarSort.cpp. O(N log N), O(N) space.
-Origin first, then +x axis counterclockwise. Equal angle: nearest first.
-"""
+# 원점 우선, +x축부터 반시계 방향 정렬. 같은 각도는 가까운 점 우선. O(N log N).
 from functools import cmp_to_key
 
 

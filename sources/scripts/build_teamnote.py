@@ -96,6 +96,8 @@ for item in events:
 tex.extend([r'\subsection{구간별 약수 최대 개수, 최대 소수}',
             r'\inputminted[fontsize=\scriptsize]{text}{docs/NUMBER_TABLES.txt}'])
 for block in notes.split('\n\n'):
+    if block.startswith('원본 main.tex'):
+        continue
     if block.startswith('# '):
         continue
     if block.startswith('## '):
@@ -118,8 +120,26 @@ body = ParagraphStyle('Body', fontName='Body', fontSize=8.1, leading=10.5,
 section_style = ParagraphStyle('Section', parent=body, fontSize=11, leading=14,
                               textColor=ACCENT, spaceBefore=7, spaceAfter=4, keepWithNext=True)
 heading_style = ParagraphStyle('Heading', parent=body, fontSize=9, leading=12,
+                              textColor=colors.HexColor('#2457A6'),
                               spaceBefore=6, spaceAfter=3, keepWithNext=True)
 small = ParagraphStyle('Small', parent=body, fontSize=6.5, leading=8, spaceAfter=2, textColor=colors.HexColor('#61727E'))
+
+
+section_number = 0
+subsection_number = 0
+
+
+def section_heading(title):
+    global section_number, subsection_number
+    section_number += 1
+    subsection_number = 0
+    return Paragraph(escape(f'{section_number}. {title}'), section_style)
+
+
+def subheading(title):
+    global subsection_number
+    subsection_number += 1
+    return Paragraph(escape(f'{section_number}.{subsection_number} {title}'), heading_style)
 
 
 class CodeLine(Flowable):
@@ -183,7 +203,6 @@ def page_chrome(canvas, doc):
     canvas.setFont('Body', 7)
     canvas.setFillColor(colors.HexColor('#61727E'))
     canvas.drawRightString(PAGE_W - MARGIN, PAGE_H - 17, '49 algorithms & templates  |  Python 3.10+')
-    canvas.drawString(MARGIN, 11, '0-based  /  [l, r)')
     canvas.drawRightString(PAGE_W - MARGIN, 11, str(doc.page))
     canvas.line(PAGE_W / 2, 24, PAGE_W / 2, PAGE_H - 33)
 
@@ -199,28 +218,28 @@ toc = TableOfContents()
 toc.tableStyle.add('TOPPADDING', (0, 0), (-1, -1), 1)
 toc.tableStyle.add('BOTTOMPADDING', (0, 0), (-1, -1), 1)
 toc.levelStyles = [ParagraphStyle('TOC0', fontName='Body', fontSize=8.5, leading=11, spaceBefore=4, textColor=ACCENT),
-                   ParagraphStyle('TOC1', fontName='Body', fontSize=7, leading=9, leftIndent=8, spaceBefore=0, spaceAfter=0)]
+                   ParagraphStyle('TOC1', fontName='Body', fontSize=7, leading=9, leftIndent=8, textColor=colors.HexColor('#2457A6'), spaceBefore=0, spaceAfter=0)]
 story.append(toc)
 for item in events:
     if 'section' in item:
-        story.append(Paragraph(escape(item['section']), section_style))
+        story.append(section_heading(item['section']))
     else:
-        story.append(Paragraph(escape(item['title']), heading_style))
-        story.append(Paragraph(escape(item['path']), small))
+        story.append(subheading(item['title'] + ' [PY]'))
         story.extend(code_lines((ROOT / item['path']).read_text(encoding='utf-8')))
-story.append(Paragraph('구간별 약수 최대 개수, 최대 소수', heading_style))
+story.append(subheading('구간별 약수 최대 개수, 최대 소수'))
 story.append(Paragraph('원본의 수치표를 보존했습니다. 각 행의 지수는 오른쪽 소수 목록에 대응합니다.', body))
 for table in tables.split('\n\n'):
     story.append(KeepTogether(code_lines(table)))
 for block in notes.split('\n\n'):
+    if block.startswith('원본 main.tex'):
+        continue
     if block.startswith('# '):
         continue
     if block.startswith('## '):
-        story.append(Paragraph(escape(block[3:]), heading_style))
+        story.append(subheading(block[3:]))
     else:
         story.append(Paragraph(escape(block.replace('\n', ' ')), body))
     if block.startswith('## 카탈란'):
-        story.append(Paragraph('python/Misc/Reference.py', small))
         story.extend(code_lines((ROOT / 'python/Misc/Reference.py').read_text(encoding='utf-8')))
 doc.multiBuild(story)
 pages = len(PdfReader(OUT / 'icpc-teamnote-python.pdf').pages)

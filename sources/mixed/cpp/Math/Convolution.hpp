@@ -1,7 +1,7 @@
 #pragma once
 #include "../common.hpp"
-// Based on code/Math/Convolution.cpp. O(N log N), space O(N).
-// NTT/CRT exact; FFT approximate. All len(a)+len(b)-1 coefficients retained.
+// 다항식·비트 합성곱 O(N log N), 공간 O(N).
+// NTT/CRT는 정확, FFT는 근사. 뒤쪽 0을 포함한 모든 계수를 반환한다.
 namespace tn {
 ll mod_power(ll a,ll b,ll mod) {
     ll out=1; for (;b;b>>=1,a=i128(a)*a%mod) if (b&1) out=i128(out)*a%mod;
@@ -36,7 +36,7 @@ vector<ll> ntt_multiply(vector<ll> a,vector<ll> b,ll mod=998244353,ll root=3) {
     ntt(a,true,mod,root); a.resize(size); return a;
 }
 vector<ll> multiply_mod(vector<ll> a,vector<ll> b,ll mod=998244353) {
-    // Any 1<=mod<=2^31-1; N<=2^24. CRT bound checked explicitly.
+    // 1<=mod<=2^31-1, N<=2^24. CRT 복원 범위를 넘으면 예외.
     assert(1<=mod && mod<=INT_MAX); if (a.empty() || b.empty()) return {};
     int size=a.size()+b.size()-1,n=1; while (n<size) n*=2;
     if (n>(1<<24)) throw length_error("NTT length exceeds 2^24");
@@ -81,7 +81,7 @@ vector<ll> multiply_fft(const vector<ll>& a,const vector<ll>& b) {
     x.resize(n); y.resize(n); fft(x); fft(y);
     for (int i=0;i<n;i++) x[i]*=y[i]; fft(x,true);
     vector<ll> result(size); for (int i=0;i<size;i++) result[i]=llroundl(x[i].real());
-    return result; // rounding may fail for large coefficients; results must fit ll
+    return result; // 큰 계수는 반올림 오차 가능. 결과는 ll 범위여야 한다.
 }
 vector<ll> bitwise_convolution(vector<ll> a,vector<ll> b,char kind) {
     int n=a.size(); assert(n && !(n&(n-1)) && int(b.size())==n);

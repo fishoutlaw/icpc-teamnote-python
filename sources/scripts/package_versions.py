@@ -40,7 +40,8 @@ bundle('cpp', ['code', 'ATTRIBUTION.md'], {
 })
 
 common = ['python', 'code', 'docs', 'teamnote.sty', 'requirements-pdf.txt',
-          'ATTRIBUTION.md', 'tests/test_algorithms.py', 'tests/test_full_teamnote.py']
+          'ATTRIBUTION.md', 'tests/test_algorithms.py', 'tests/test_full_teamnote.py',
+          'scripts/pdf_checks.py']
 
 
 def readme(title, commands, details):
@@ -60,14 +61,14 @@ def readme(title, commands, details):
 
 bundle('python', common + ['main.tex', 'scripts/build_teamnote.py', 'scripts/verify_pdf.py'], {
     'README.md': readme('Python', 'python scripts/build_teamnote.py\npython scripts/verify_pdf.py',
-                       '20쪽. 알고리즘은 python/에 있습니다. 변환 차이는 docs/PORTING.md를 참조하세요.'),
+                       '19쪽. 알고리즘은 python/에 있습니다. 변환 차이는 docs/PORTING.md를 참조하세요.'),
     'icpc-teamnote-python.pdf': (ROOT / 'output/pdf/icpc-teamnote-python.pdf').read_bytes(),
 })
 bundle('mixed', common + ['mixed', 'mixed.tex', 'tests/mixed_runner.cpp',
                          'scripts/build_mixed.py', 'scripts/mixed_manifest.py',
                          'scripts/verify_mixed.py', 'scripts/verify_mixed_pdf.py'], {
     'README.md': readme('Python + C++', 'python scripts/build_mixed.py\npython scripts/verify_mixed_pdf.py\npython scripts/verify_mixed.py',
-                       '23쪽. Python 전용 15개, C++ 전용 16개, 양쪽 18개입니다. '
+                       '22쪽. Python 전용 15개, C++ 전용 16개, 양쪽 18개입니다. '
                        'C++ 검증에는 PATH의 g++가 필요합니다. 사용 조건은 mixed/README.md를 참조하세요.'),
     'icpc-teamnote-mixed.pdf': (ROOT / 'output/pdf/icpc-teamnote-mixed.pdf').read_bytes(),
 })

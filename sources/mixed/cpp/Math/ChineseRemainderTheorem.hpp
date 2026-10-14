@@ -1,7 +1,7 @@
 #pragma once
 #include "../common.hpp"
-// Based on code/Math/ChineseRemainderTheorem.cpp. General CRT, O(K log M).
-// Positive moduli; final LCM must fit signed 64-bit. nullopt = inconsistent.
+// 일반 중국인의 나머지 정리. 합동식 병합 O(K log M).
+// 양의 모듈러스, 최종 최소공배수는 부호 있는 64비트 범위. 불가능하면 nullopt.
 namespace tn {
 tuple<i128,i128,i128> extended_gcd128(i128 a,i128 b) {
     i128 x=1,y=0,u=0,v=1;

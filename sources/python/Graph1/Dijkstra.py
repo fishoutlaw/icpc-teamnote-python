@@ -1,6 +1,4 @@
-"""원본: code/Graph1/Dijkstra.cpp. 0-based.
-Nonnegative weights. O(V+E log(E+1)), space O(V+E).
-"""
+# 음이 아닌 가중치의 최단 거리. 최소 힙으로 다음 정점을 고른다.
 from collections import deque
 
 
@@ -11,10 +9,8 @@ from math import inf
 
 
 def dijkstra(graph, start):
-    """graph[v]의 항목은 (다음 정점, 가중치). (거리, 부모) 반환.
-
-    도달 불가 거리는 inf, 부모는 -1. 음수 가중치는 ValueError.
-    """
+    # 인접 항목은 (정점, 가중치). (거리, 부모) 반환; 도달 불가는 (inf,-1).
+    # 음수 가중치는 허용하지 않는다.
     if any(weight < 0 for edges in graph for _, weight in edges):
         raise ValueError('Dijkstra requires nonnegative weights')
     distance = [inf] * len(graph)
@@ -35,7 +31,7 @@ def dijkstra(graph, start):
 
 
 def restore_path(parent, start, target):
-    """dijkstra의 부모 배열에서 경로 복원. 도달 불가면 []. O(V)."""
+    # dijkstra의 부모 배열에서 경로 복원. 도달 불가면 []. O(V).
     path = []
     while target != -1:
         path.append(target)

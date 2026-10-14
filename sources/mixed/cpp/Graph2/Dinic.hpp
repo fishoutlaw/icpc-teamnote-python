@@ -1,6 +1,6 @@
 #pragma once
 #include "../common.hpp"
-// Based on code/Graph2/Dinic.cpp. Iterative Dinic O(V^2 E), space O(V+E).
+// 레벨 그래프를 이용한 최대 유량 O(V^2 E).
 namespace tn {
 struct Dinic {
     vector<vector<int>> g; vector<int> to; vector<ll> cap;
@@ -20,7 +20,7 @@ struct Dinic {
         }
         return d;
     }
-    ll max_flow(int s,int t,ll limit=INF) { // additional flow, consumes residual
+    ll max_flow(int s,int t,ll limit=INF) { // 잔여 용량을 갱신하고 추가 유량을 반환한다.
         assert(s!=t); ll flow=0;
         while (flow<limit) {
             auto level=levels(s); if (level[t]==-1) break;
@@ -47,7 +47,7 @@ struct Dinic {
         }
         return flow;
     }
-    pair<vector<int>,vector<int>> min_cut(int s) const { // after full max_flow
+    pair<vector<int>,vector<int>> min_cut(int s) const { // 유량 제한 없이 최대 유량을 구한 뒤 호출한다.
         auto d=levels(s); vector<int> a,b;
         for (int v=0;v<int(g.size());v++) (d[v]==-1?b:a).push_back(v);
         return {a,b};

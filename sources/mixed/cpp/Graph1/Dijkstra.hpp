@@ -1,6 +1,6 @@
 #pragma once
 #include "../common.hpp"
-// Based on code/Graph1/Dijkstra.cpp. O(V+E log(E+1)), space O(V+E).
+// 음이 아닌 가중치의 최단 거리. 최소 힙으로 다음 정점을 고른다.
 namespace tn {
 pair<vector<ll>,vector<int>> dijkstra(
     const vector<vector<pair<int,ll>>>& g, int s) {
@@ -15,7 +15,7 @@ pair<vector<ll>,vector<int>> dijkstra(
             d[u]=cost+w; p[u]=v; q.push({d[u],u});
         }
     }
-    return {d,p}; // INF = unreachable; parent=-1
+    return {d,p}; // 도달 불가는 거리 INF, 부모 -1.
 }
 vector<int> restore_path(const vector<int>& p,int s,int t) {
     vector<int> path;

@@ -1,7 +1,5 @@
-"""원본: code/Graph2/Dinic.cpp. Integer capacities, vertices 0..n-1.
-Iterative Dinic O(V^2 E), O(V+E) space. Calls consume residual capacities.
-max_flow returns additional flow; min_cut returns current residual partition.
-"""
+# 레벨 그래프에서 유량을 흘린다. O(V^2 E), 정수 용량.
+# 호출마다 잔여 용량을 갱신하며 추가 유량을 반환한다.
 from collections import deque
 
 
@@ -72,7 +70,7 @@ class Dinic:
         return flow
 
     def min_cut(self, source):
-        """Call after unrestricted max_flow. Returns (source side, other side)."""
+        # 유량 제한 없이 최대 유량을 구한 뒤 호출. (시작점 쪽, 반대쪽) 반환.
         level = self._levels(source)
         return ([v for v, d in enumerate(level) if d != -1],
                 [v for v, d in enumerate(level) if d == -1])

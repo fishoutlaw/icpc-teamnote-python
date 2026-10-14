@@ -1,8 +1,5 @@
-"""원본: code/Graph2/MCMF.cpp. 0-based, integral capacities/costs.
-Bellman-Ford augmenting paths: O(A VE), A = augmentation count; O(V+E) space.
-Negative costs allowed; reachable residual negative cycles raise ValueError.
-run(s,t,k=None) returns additional (flow,cost), mutates residual network.
-"""
+# 최단 증가 경로를 반복해 추가 (유량, 비용)을 구한다. O(A VE), A는 증가 횟수.
+# 잔여망을 갱신하며, 도달 가능한 음수 비용 사이클은 거부한다.
 from math import inf
 
 

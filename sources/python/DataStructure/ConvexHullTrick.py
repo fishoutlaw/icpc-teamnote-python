@@ -1,8 +1,6 @@
-"""원본: code/DataStructure/ConvexHullTrick.cpp.
-MonotoneCHT: max, increasing slopes and query x, amortized O(1), O(N) space.
-LiChao: arbitrary slopes/order, integer x in fixed [lo,hi], O(log range).
-For min queries negate slopes/intercepts and the returned value.
-"""
+# 직선 최댓값 질의. 단조형은 기울기·질의 x가 증가할 때 분할 상환 O(1).
+# Li Chao는 고정 정수 구간에서 임의 순서 질의 O(log 범위).
+# 최솟값은 기울기·절편과 결과의 부호를 뒤집는다.
 from collections import deque
 
 

@@ -1,6 +1,4 @@
-"""원본: code/Graph2/LCA.cpp. Connected undirected tree, 0-based.
-Build O(N log N) time/space, query O(log N). Iterative traversal.
-"""
+# 연결된 무향 트리의 최소 공통 조상. 전처리 O(N log N), 질의 O(log N).
 
 
 class LCA:

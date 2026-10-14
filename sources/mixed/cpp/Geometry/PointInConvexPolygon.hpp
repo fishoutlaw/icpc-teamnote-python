@@ -1,6 +1,6 @@
 #pragma once
 #include "Template.hpp"
-// Based on code/Geometry/PointInConvexPolygon.cpp. Strict CCW hull, O(log N).
+// 반시계 볼록 다각형 내부 판별 O(log N). 끝점 중복·일직선 내부점 제거.
 namespace tn {
 bool point_in_convex_polygon(const vector<Point>& h,Point p) {
     int n=h.size(); if (n<3) return n && on_segment(h.front(),h.back(),p);

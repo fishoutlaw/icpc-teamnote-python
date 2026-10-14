@@ -1,6 +1,6 @@
 #pragma once
 #include "../common.hpp"
-// Based on code/String/Z.cpp. O(N) time/space; byte offsets; z[0]=N.
+// 각 바이트 위치에서 접두사와 일치하는 길이. O(N), z[0]=N.
 namespace tn {
 vector<int> z_function(const string& s) {
     int n=s.size(); vector<int> z(n); if (n) z[0]=n;

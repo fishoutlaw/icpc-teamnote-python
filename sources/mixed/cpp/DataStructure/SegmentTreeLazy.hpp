@@ -1,6 +1,6 @@
 #pragma once
 #include "../common.hpp"
-// Based on code/DataStructure/SegmentTreeLazy.cpp. Range add/sum O(log N).
+// 구간 [l,r) 덧셈과 합 O(log N). 갱신을 자식에 지연 전파한다.
 namespace tn {
 struct LazySegmentTree {
     int n; vector<ll> tree,lazy;

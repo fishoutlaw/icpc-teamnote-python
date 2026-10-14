@@ -1,7 +1,5 @@
-"""원본: code/Geometry/Template.cpp. Points are (x,y) integer tuples.
-Exact orientation, dot, cross, squared distance: O(1) integer operations.
-Floating point coordinates require an application-specific tolerance policy.
-"""
+# 정수 점 (x,y)의 내적·외적·방향·거리 제곱. O(1).
+# 실수 좌표를 쓰면 오차 허용 기준을 별도로 정해야 한다.
 
 
 def add(a, b):

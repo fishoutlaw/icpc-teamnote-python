@@ -1,7 +1,5 @@
-"""원본: code/String/Manacher.cpp. O(N) time/space.
-Returns 2*N+1 radii with separators; radius equals original palindrome length.
-Separator is a unique object, so literal '#' in input is safe.
-"""
+# 구분자를 넣은 2N+1개 중심의 팰린드롬 반지름. O(N).
+# 반지름은 원문 팰린드롬 길이이며 구분자는 입력 문자와 충돌하지 않는다.
 
 
 def manacher(text):

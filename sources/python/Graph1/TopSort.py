@@ -1,6 +1,4 @@
-"""원본: code/Graph1/TopSort.cpp. 0-based.
-Topological sort O(V+E), space O(V). Cycle -> None.
-"""
+# 진입 차수가 0인 정점부터 꺼내 위상 순서를 구한다. O(V+E).
 from collections import deque
 
 
@@ -11,7 +9,7 @@ from math import inf
 
 
 def topological_sort(graph):
-    """DAG의 위상 순서. 사이클이 있으면 None. 빈 그래프는 []."""
+    # DAG의 위상 순서. 사이클이 있으면 None. 빈 그래프는 [].
     indegree = [0] * len(graph)
     for neighbors in graph:
         for u in neighbors:

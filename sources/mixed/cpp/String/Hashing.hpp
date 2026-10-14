@@ -1,7 +1,7 @@
 #pragma once
 #include "../common.hpp"
-// Based on code/String/Hashing.cpp. O(N) build/space; O(1) substring [l,r).
-// Byte strings. Collisions possible: verify matches or use two moduli.
+// 구간 [l,r) 해시. 전처리 O(N), 질의 O(1).
+// 바이트 문자열. 충돌 가능: 실제 값 확인 또는 두 모듈러스 사용.
 namespace tn {
 struct Hashing {
     ll mod; vector<ll> h{0},p{1};

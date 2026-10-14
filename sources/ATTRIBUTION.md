@@ -8,3 +8,5 @@
 - Python 구현과 ReportLab 빌드 스크립트는 이 로컬 변환 작업에서 작성했습니다. 기존 알고리즘의 전제·복잡도·경계 처리 변경은 `docs/PORTING.md`에 기록합니다.
 - `mixed/cpp/`는 원본 C++ 항목을 기반으로 경계 처리·인터페이스를 정비한 혼합판용 구현입니다. 세부 사용 조건과 언어별 차이는 `mixed/README.md`, 선택 목록은 `mixed/manifest.json`에 기록합니다.
 - 원본 저장소는 README에서 2023년 11월 이후 유지보수하지 않는다고 명시합니다.
+
+- 편집판 코드와 PDF의 경로·출처 주석은 읽기 편하게 생략했습니다. 항목별 원본 경로·저자는 `docs/manifest.json`, 참고 목록은 `docs/UPSTREAM_README.md`에 유지합니다. 원본 `code/`의 주석은 수정하지 않았습니다.

@@ -1,10 +1,5 @@
-"""원본: code/Misc/Cpp-Grammer.cpp. Python equivalents, no GCC extensions.
-random.randint(lo,hi), random.random(), random.Random(seed) for reproducibility.
-bits: x.bit_count(), x.bit_length(), x & -x. x must be nonnegative.
-Rope replacement: collect fragments then ''.join(parts); slicing copies O(k).
-OrderedSet below uses stdlib sorted list: rank/select O(log N)/O(1),
-insert/delete O(N). Use compressed Fenwick/segment tree for many updates.
-"""
+# 정렬 리스트의 순위·k번째 조회 O(log N)·O(1), 삽입·삭제 O(N).
+# 갱신이 많으면 좌표 압축과 펜윅 트리·세그먼트 트리를 사용한다.
 from bisect import bisect_left
 
 
@@ -42,7 +37,7 @@ def leading_zeros(x, width=64):
 
 
 def next_same_popcount(x):
-    """Smallest larger positive integer with same number of set bits."""
+    # 1인 비트 수가 같은, 현재 값보다 큰 최소 양의 정수.
     if x <= 0:
         raise ValueError('positive integer required')
     low = x & -x
@@ -51,7 +46,7 @@ def next_same_popcount(x):
 
 
 def digit_frequency(n, digit):
-    """Count decimal digit in [1,n], no leading zeros. O(log n)."""
+    # [1,n]에서 십진 숫자의 등장 횟수. 앞쪽 0 제외, O(log n).
     if not 0 <= digit <= 9:
         raise ValueError('invalid digit')
     answer, place = 0, 1

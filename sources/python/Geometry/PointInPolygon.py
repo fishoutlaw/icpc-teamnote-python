@@ -1,6 +1,4 @@
-"""원본: code/Geometry/PointInPolygon.cpp. Simple polygon; includes boundary.
-Integer winding number avoids floating ray endpoint tricks. O(N), O(1) space.
-"""
+# 단순 다각형 내부 판별 O(N). 감김 수를 사용하며 경계를 포함한다.
 
 
 def point_in_polygon(points, p):

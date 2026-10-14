@@ -1,6 +1,6 @@
 #pragma once
 #include "../common.hpp"
-// Based on code/Graph1/Bellman.cpp. O(VE), auxiliary O(V).
+// 간선을 반복 완화하는 최단 거리 O(VE). 음수 사이클이면 nullopt.
 namespace tn {
 optional<vector<ll>> bellman_ford(int n,const vector<tuple<int,int,ll>>& e,int s) {
     vector<ll> d(n,INF); d[s]=0;
@@ -10,6 +10,6 @@ optional<vector<ll>> bellman_ford(int n,const vector<tuple<int,int,ll>>& e,int s
             d[v]=d[u]+w, changed=true;
         if (!changed) return d;
     }
-    return nullopt; // reachable negative cycle (Python: None)
+    return nullopt; // 도달 가능한 음수 사이클.
 }
 }

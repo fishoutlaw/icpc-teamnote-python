@@ -1,7 +1,5 @@
-"""원본: code/Math/ChineseRemainderTheorem.cpp. General CRT, positive moduli.
-Returns (residue,lcm), or None if inconsistent. Empty input -> (0,1).
-O(K log M) modular arithmetic steps, O(1) additional integers.
-"""
+# 양의 모듈러스인 합동식을 병합한다. (나머지, 최소공배수), 불가능하면 None.
+# 빈 입력은 (0,1). O(K log M).
 from math import gcd
 
 

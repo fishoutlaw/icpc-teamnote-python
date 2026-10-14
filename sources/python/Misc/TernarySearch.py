@@ -1,8 +1,5 @@
-"""원본: code/Misc/TernarySearch.cpp.
-Unimodal minimum, closed interval [lo,hi], smallest minimizer for integer search.
-Requires strict decrease/increase outside the (possibly flat) minimum region.
-Integer: O(log range) evaluations; real: O(iterations); space O(1).
-"""
+# 단봉 함수의 최솟값. 닫힌 구간 [lo,hi], 정수는 가장 작은 최소 위치 반환.
+# 최소 구간 밖에서 엄격히 감소·증가해야 한다. 정수 O(log 범위).
 
 
 def ternary_integer(lo, hi, f):

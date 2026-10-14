@@ -1,4 +1,4 @@
-"""원본: code/Math/Primes.cpp. Trial division O(sqrt(N)), O(log N) output."""
+# 제곱근까지 나누어 소인수분해한다. O(sqrt(N)).
 from math import isqrt
 
 

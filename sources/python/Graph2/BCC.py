@@ -1,8 +1,5 @@
-"""원본: code/Graph2/BCC.cpp. Iterative Tarjan, undirected edges (u,v).
-0-based, parallel edges allowed, self loops rejected. O(V+E) time/space.
-Returns (cut vertices, bridge edge IDs, vertex-biconnected vertex groups).
-Isolated vertices form singleton groups. Cut vertices may belong to many groups.
-"""
+# 무향 간선 (u,v)의 단절점·단절선 번호·이중 연결 정점 묶음. O(V+E).
+# 다중 간선 허용, 자기 루프 금지. 고립점도 묶음이며 단절점은 중복 소속 가능.
 
 
 def biconnected_components(n, edges):

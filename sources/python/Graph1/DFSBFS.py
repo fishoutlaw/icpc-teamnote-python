@@ -1,6 +1,4 @@
-"""원본: code/Graph1/DFSBFS.cpp. 0-based.
-BFS/iterative DFS O(V+E), space O(V).
-"""
+# 인접 리스트 순회 O(V+E). 정점 번호는 0부터 시작한다.
 from collections import deque
 
 
@@ -11,7 +9,7 @@ from math import inf
 
 
 def bfs(graph, start):
-    """시작점에서의 간선 수 거리. 도달 불가는 -1."""
+    # 시작점에서의 간선 수 거리. 도달 불가는 -1.
     distance = [-1] * len(graph)
     distance[start] = 0
     queue = deque([start])
@@ -25,7 +23,7 @@ def bfs(graph, start):
 
 
 def dfs(graph, start):
-    """재귀 DFS와 같은 인접 리스트 순서로 방문. 재귀 깊이 제한 없음."""
+    # 재귀 DFS와 같은 인접 리스트 순서로 방문. 재귀 깊이 제한 없음.
     seen = [False] * len(graph)
     seen[start] = True
     order = [start]

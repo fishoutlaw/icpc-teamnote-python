@@ -1,7 +1,4 @@
-"""원본: code/DataStructure/SegmentTreeLazy.cpp.
-0-based [l,r): range add / sum. O(log N) per query; O(N) space.
-Recursion depth O(log N), not O(N).
-"""
+# 구간 [l,r) 덧셈과 합 O(log N). 갱신을 자식에 지연 전파한다.
 
 
 class LazySegmentTree:

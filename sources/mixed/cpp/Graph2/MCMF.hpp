@@ -1,7 +1,7 @@
 #pragma once
 #include "../common.hpp"
-// Based on code/Graph2/MCMF.cpp. Bellman-Ford augmentations O(A VE).
-// Reachable negative residual cycles rejected. Total cost must fit (-INF,INF).
+// 최단 증가 경로로 최소 비용 유량을 구한다. O(A VE), A는 증가 횟수.
+// 도달 가능한 음수 사이클 금지. 누적 비용은 (-INF,INF) 범위.
 namespace tn {
 struct MinCostFlow {
     struct Edge { int u,v; ll cap,cost; };
@@ -10,7 +10,7 @@ struct MinCostFlow {
     void add_edge(int u,int v,ll cap,ll cost) {
         assert(cap>=0); edges.push_back({u,v,cap,cost}); edges.push_back({v,u,0,-cost});
     }
-    pair<ll,ll> run(int s,int t,ll limit=INF) { // additional (flow,cost)
+    pair<ll,ll> run(int s,int t,ll limit=INF) { // 추가 (유량, 비용)을 반환한다.
         assert(s!=t); ll flow=0,cost=0;
         while (flow<limit) {
             vector<ll> d(n,INF); vector<int> p(n,-1); d[s]=0;

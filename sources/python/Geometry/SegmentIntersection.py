@@ -1,7 +1,5 @@
-"""원본: code/Geometry/SegmentIntersection.cpp. Exact integer geometry O(1).
-Returns (0,None), (1,point), or (-1,None) for overlapping interval.
-Unique intersection coordinates are Fractions. Point segments supported.
-"""
+# 선분 교차 O(1). (0,None): 없음, (1,점): 한 점, (-1,None): 구간 겹침.
+# 교점은 Fraction으로 정확히 계산하며 길이 0인 선분도 처리한다.
 from fractions import Fraction
 
 

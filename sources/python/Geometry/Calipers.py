@@ -1,6 +1,5 @@
-"""원본: code/Geometry/Calipers.cpp. CCW strict convex hull (no repeated end).
-O(N) time, O(1) space. Return farthest point pair; empty -> None.
-"""
+# 반시계 방향 볼록 껍질에서 가장 먼 두 점을 구한다. O(N).
+# 끝점 중복·일직선 내부점은 제거해야 한다. 빈 입력은 None.
 
 
 def calipers(hull):

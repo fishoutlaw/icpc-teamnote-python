@@ -1,7 +1,5 @@
-"""원본: code/Graph1/Floyd.cpp. 0-based directed edges (u,v,w).
-O(V^3) time / O(V^2) space. Negative cycle: some d[v][v] < 0.
-Distances affected by negative cycles are not valid shortest distances.
-"""
+# 모든 쌍 최단 거리 O(V^3). d[v][v]<0이면 음수 사이클이 있다.
+# 음수 사이클을 거치는 경로의 거리는 유효하지 않다.
 from math import inf
 
 

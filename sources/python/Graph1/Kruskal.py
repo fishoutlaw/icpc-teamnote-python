@@ -1,6 +1,4 @@
-"""원본: code/Graph1/Kruskal.cpp. 0-based.
-DSU amortized O(alpha(N)); Kruskal O(V+E log(E+1)).
-"""
+# 간선을 가중치순으로 골라 최소 신장 포리스트를 만든다. O(V+E log(E+1)).
 class DSU:
     def __init__(self, n):
         self.parent = list(range(n))
@@ -26,10 +24,7 @@ class DSU:
 
 
 def kruskal(n, edges):
-    """edges: (가중치, u, v). (최소 신장 포리스트 비용, 선택 간선) 반환.
-
-    n > 0일 때 선택 간선 수가 n-1이면 연결 그래프의 MST이다.
-    """
+    # 간선은 (가중치,u,v). (비용, 선택 간선) 반환; 연결 그래프면 간선 수 n-1.
     dsu = DSU(n)
     total = 0
     selected = []

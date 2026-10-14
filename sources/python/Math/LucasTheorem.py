@@ -1,6 +1,4 @@
-"""원본: code/Math/LucasTheorem.cpp. p MUST be prime.
-Build O(p) time/space, calc(n,r) O(log_p(n+1)). Large p needs another method.
-"""
+# 소수 p에 대한 이항 계수. 전처리 O(p), 질의 O(log_p(n+1)).
 
 
 class Lucas:

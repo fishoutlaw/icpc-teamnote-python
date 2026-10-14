@@ -1,6 +1,5 @@
-"""원본: code/Math/Sieve.cpp. O(N log log N) time, O(N) space.
-spf[x] = smallest prime factor, spf[1]=1. Factorization O(log x).
-"""
+# 최소 소인수 표를 만든다. O(N log log N), spf[1]=1.
+# 표를 이용한 소인수분해는 O(log x).
 
 
 def sieve(n):

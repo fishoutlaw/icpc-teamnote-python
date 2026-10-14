@@ -1,7 +1,5 @@
-"""원본: code/DataStructure/PersistentSegmentTree.cpp.
-Frequency versions on [0,n). Insert/kth O(log N); Q inserts O(Q log N) space.
-kth(before, after, k): 1-based k, after-before must be nonnegative counts.
-"""
+# 빈도 트리의 이전 버전을 보존한다. 삽입·k번째 값 O(log N).
+# k는 1부터 시작하며 두 버전의 빈도 차는 음수가 아니어야 한다.
 
 
 class PersistentSegmentTree:

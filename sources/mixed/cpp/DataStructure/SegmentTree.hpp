@@ -1,6 +1,6 @@
 #pragma once
 #include "../common.hpp"
-// Based on code/DataStructure/SegmentTree.cpp. Build O(N); set/sum O(log N).
+// 점 대입과 구간 [l,r) 합 O(log N). 초기화 O(N).
 namespace tn {
 struct SegmentTree {
     int n,size=1; vector<ll> tree;

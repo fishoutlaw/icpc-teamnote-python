@@ -1,9 +1,6 @@
-"""원본: code/Math/Matrix.cpp. Gauss-Jordan RREF/rank/determinant/inverse.
-O(rows^2 * cols) arithmetic, O(rows*cols) space. Input not modified.
-Default exact rational arithmetic (Fraction); mod=prime for finite field.
-Floating point input is converted exactly; for decimal intent pass Fraction.
-Returns (rref, rank, determinant or None, inverse or None).
-"""
+# 가우스 조던 소거로 (기약 행렬, 계수, 행렬식, 역행렬)을 구한다. O(행^2·열).
+# 기본은 정확한 Fraction 연산, mod에는 소수를 지정한다. 입력은 보존한다.
+# 정의되지 않는 행렬식·역행렬은 None. 정확한 소수 입력은 Fraction으로 전달한다.
 from fractions import Fraction
 
 

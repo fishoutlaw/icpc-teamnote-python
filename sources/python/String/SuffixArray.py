@@ -1,7 +1,5 @@
-"""원본: code/String/SuffixArray.cpp. Doubling + counting sort, O(N log N).
-Space O(N). Returns (sa,lcp); lcp[i]=LCP(sa[i-1],sa[i]), lcp[0]=0.
-Unicode strings supported; all indices 0-based.
-"""
+# 접미사 배열과 인접 접미사의 공통 접두사 길이. O(N log N).
+# lcp[i]=LCP(sa[i-1],sa[i]), lcp[0]=0. 인덱스는 0부터 시작한다.
 
 
 def suffix_array(text):

@@ -1,6 +1,6 @@
 #pragma once
 #include "Template.hpp"
-// Based on code/Geometry/PointInPolygon.cpp. Simple polygon, O(N), O(1) space.
+// 단순 다각형 내부 판별 O(N).
 namespace tn {
 bool point_in_polygon(const vector<Point>& points,Point p) {
     int n=points.size(),winding=0;
@@ -10,6 +10,6 @@ bool point_in_polygon(const vector<Point>& points,Point p) {
         if (a.second<=p.second && p.second<b.second && c>0) ++winding;
         if (b.second<=p.second && p.second<a.second && c<0) --winding;
     }
-    return winding!=0; // boundary included
+    return winding!=0; // 경계도 내부로 판정한다.
 }
 }

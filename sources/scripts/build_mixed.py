@@ -23,10 +23,12 @@ from reportlab.platypus.tableofcontents import TableOfContents
 
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--font-size', type=float, choices=(8.5, 9.0), default=8.5)
+parser.add_argument('--supplement', action='store_true', help='Append the deduplicated Python reference')
+parser.add_argument('--skip-validation', action='store_true', help='Generate without reopening or validating the PDF')
 args = parser.parse_args()
 CODE_SIZE = args.font_size
 CODE_LEADING = CODE_SIZE + 1.5
-SUFFIX = '-9pt' if CODE_SIZE == 9 else ''
+SUFFIX = ('-supplement' if args.supplement else '') + ('-9pt' if CODE_SIZE == 9 else '')
 PDF_NAME = f'icpc-teamnote-mixed{SUFFIX}.pdf'
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'output/pdf'
@@ -89,6 +91,12 @@ for block in notes.split('\n\n'):
         tex.append(r'\noindent ' + tex_escape(block.replace('\n', ' ')) + r'\par\smallskip')
     if block.startswith('## 카탈란'):
         tex.append(r'\inputminted{python}{python/Misc/Reference.py}')
+if args.supplement:
+    from supplement_manifest import ENTRIES
+    tex.append(r'\section{Python 추가 참조}')
+    for title, path in ENTRIES:
+        tex.append(r'\subsection{' + tex_escape(title + ' [PY]') + '}')
+        tex.append(r'\inputminted{python}{' + path + '}')
 tex.append(r'\end{document}')
 (ROOT / f'mixed{SUFFIX}.tex').write_text('\n'.join(tex) + '\n', encoding='utf-8')
 
@@ -225,9 +233,17 @@ for block in notes.split('\n\n'):
         story.append(Paragraph(escape(block.replace('\n', ' ')), body))
     if block.startswith('## 카탈란'):
         story.extend(code_lines((ROOT / 'python/Misc/Reference.py').read_text(encoding='utf-8')))
+if args.supplement:
+    story.append(section_heading('Python 추가 참조'))
+    for title, path in ENTRIES:
+        story.append(subheading(title + ' [PY]'))
+        story.extend(code_lines(read_code(path)))
+
 doc.multiBuild(story)
-pages = len(PdfReader(OUT / PDF_NAME).pages)
-assert pages <= 25, f'Mixed edition exceeds page budget: {pages}'
+pages = doc.page
+if not args.skip_validation:
+    pages = len(PdfReader(OUT / PDF_NAME).pages)
+    assert pages <= 25, f'Mixed edition exceeds page budget: {pages}'
 import shutil
 publish = (ROOT / 'versions') if SUFFIX else (ROOT.parent if ROOT.name == 'sources' else ROOT)
 publish.mkdir(exist_ok=True)

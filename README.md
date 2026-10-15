@@ -11,6 +11,12 @@
 
 **추가 판형: [혼합판 9pt PDF](sources/versions/icpc-teamnote-mixed-9pt.pdf) — 23쪽.** 기존 8.5pt 판은 그대로 유지합니다. 재생성은 `sources/`에서 `python scripts/build_mixed.py --font-size 9`, 검증은 `python scripts/verify_mixed_pdf.py --font-size 9`를 실행합니다.
 
+**자료 추가판: [혼합판 + Python 추가 참조 PDF](sources/versions/icpc-teamnote-mixed-supplement.pdf) — 8.5pt, 23쪽.** 기존 혼합판 뒤에 Python 빠른 참조·성능 주의사항·곱셈표 순위·편집 거리·추가 기하 함수·제출 점검을 붙였습니다. 기존 내용과 중복되는 항목은 제외했으며, 빠른 참조는 코드 앞 `#`를 제거하고 짧은 한글 설명만 인라인 주석으로 남겼습니다. 예시는 각각 독립된 사용법입니다. [추가 자료와 중복 제거 기록](sources/supplement/README.md)을 참조하세요.
+
+추가판 재생성은 `sources/`에서 `python scripts/build_mixed.py --supplement`, 검증은 `python scripts/verify_mixed_pdf.py --supplement`를 실행합니다. 추가 판형 PDF는 `sources/versions/`에 저장합니다.
+
+**자료 추가판 9pt: [PDF 다운로드](sources/versions/icpc-teamnote-mixed-supplement-9pt.pdf) — 생성기 기준 24쪽.** 8.5pt 추가판과 같은 내용을 9pt로 조판했습니다. 요청에 따라 별도 PDF 검증과 페이지 이미지 렌더링은 수행하지 않았습니다. 생성 명령은 `python scripts/build_mixed.py --supplement --font-size 9 --skip-validation`입니다.
+
 ## 세 버전 다운로드
 
 각 ZIP은 별도 폴더에 풀어서 사용합니다. Python판과 혼합판에는 해당 PDF·소스·빌드 도구·테스트·출처가 포함됩니다.
@@ -32,10 +38,11 @@ README.md
 icpc-teamnote-python.pdf
 icpc-teamnote-mixed.pdf
 sources/
-  versions/          # 버전별 ZIP 3개
+  versions/          # 버전별 ZIP 3개, 9pt·자료 추가판 PDF
   code/              # 수정하지 않은 원본 C++ 49개 파일
   python/            # Python 코드, 제출 템플릿, 참고 함수
   mixed/             # 혼합판 C++ 헤더, 언어 선택 목록, 검증 결과
+  supplement/        # 추가 참조, 새 알고리즘, 제공된 원문
   docs/              # 원본 문서, 변환 현황, 수학 참고
   scripts/           # PDF 빌드, 검증, ZIP 패키징
   tests/             # Python 테스트와 C++ 비교 테스트
@@ -80,7 +87,7 @@ LaTeX 소스도 함께 생성하지만 제공 PDF는 ReportLab 결과입니다. 
 
 ## 검증 범위
 
-- Python 22개 테스트 그룹: 경계 사례 및 무작위 입력을 기준 알고리즘과 비교.
+- Python 26개 테스트 그룹: 기존 22개와 추가 자료 4개. 경계 사례 및 무작위 입력을 기준 알고리즘과 비교.
 - GNU g++ 15.2.0: C++ 헤더 34개 독립 컴파일 및 전체 링크, 고정 seed 비교 사례 1,195개 통과.
 - PDF: 25쪽 제한, 전체 소스 내용 일치, 경로 표시 제거, 한글 텍스트, 페이지 경계 검사 및 전 페이지 시각 점검.
 

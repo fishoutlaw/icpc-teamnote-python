@@ -1,0 +1,195 @@
+
+"""ICPC Python 팀노트 추가분 | 문법 · 함정 · 수학 · 반례 (Python 3)
+예시 코드는 주석에, 재사용할 알고리즘은 함수에 정리했다.
+"""
+import sys
+import math
+from bisect import bisect_left, bisect_right
+from collections import deque, Counter, defaultdict
+from itertools import accumulate, combinations, permutations
+
+input = sys.stdin.readline
+INF = float('inf')
+MOD = 1_000_000_007
+
+# ==================== 1. Python 빠른 참조 ====================
+# a = list(map(int, input().split()))       # 정수 배열 입력
+# x, y = map(int, input().split())         # 언패킹 (map은 iterator)
+# s = input().strip()                      # 문자열 줄바꿈 제거
+# print(*a)                               # 공백 구분 출력
+# print(*a, sep='\n')                     # 줄바꿈 출력
+# print(' '.join(map(str, a)))             # str 변환 후 합치기
+# sys.stdout.write('\n'.join(map(str, a))) # 대량 출력
+# for i, x in enumerate(a): ...           # (인덱스, 값)
+# for x, y in zip(A, B): ...               # 짧은 쪽 길이까지만
+# q, r = divmod(x, y)                     # 몫, 나머지 (y != 0)
+# sum(x > 0 for x in a)                   # 조건 만족 개수
+# any(x > 0 for x in a)                   # 하나라도 True
+# all(x > 0 for x in a)                   # 모두 True (빈 배열은 True)
+# min(a, default=-1)                      # 빈 iterable 허용
+# max(a, key=lambda x: x[1])             # 두 번째 요소 기준 최대
+# a.index(x)                              # 첫 인덱스, 없으면 ValueError
+# a.count(x)                              # O(N)
+# a.append(x)                             # 끝 삽입: 분할 상환 O(1)
+# a.insert(i, x)                          # 중간 삽입: O(N)
+# a.pop()                                 # 끝 삭제: O(1)
+# a.pop(0)                                # 앞 삭제: O(N) -> deque 사용
+# a.sort()                                # 원본 수정, 반환값 None
+# b = sorted(a)                           # 새 정렬 리스트
+# a.sort(key=lambda x: (x[1], -x[0]))     # 2번째 오름, 1번째 내림
+# b = a[::-1]                             # 역순 사본 O(N)
+# a.reverse()                             # 제자리 뒤집기, None 반환
+# b = a[:]                                # 얕은 복사 (내부 객체 공유)
+# b = a                                   # 복사 X (같은 객체 참조)
+# grid = [[0] * m for _ in range(n)]      # 2차원 배열: 행 각각 생성
+# grid = [[0] * m] * n                    # 금지! 모든 행이 같은 객체
+# st = set(a)                             # 중복 제거, 순서 보장 X
+# st.add(x); st.discard(x)                # discard는 없어도 오류 X
+# st.remove(x)                            # 없으면 KeyError
+# x in st; x in dictionary                # 평균 O(1)
+# x in a                                  # 리스트 탐색 O(N)
+# Counter(a)[x]                           # 등장 횟수
+# defaultdict(int)['missing']             # 기본값 0
+# list(accumulate(a))                     # 누적합
+# list(combinations(a, 2))                # 조합 (생성량 주의)
+# list(permutations(a, 2))                # 순열 (생성량 주의)
+# ord('a'); chr(97)                       # 문자 <-> 코드포인트
+# math.gcd(x, y); math.lcm(x, y)          # 최대공약수 / 최소공배수
+# math.isqrt(n)                           # floor(sqrt(n)), 정수 정확
+# math.ceil(x); math.floor(x)             # 올림 / 내림
+# len(str(abs(n)))                        # 자릿수 (n=0이면 1)
+# list(map(int, str(n)))                  # 양의 정수 자릿수 추출
+# bisect_left(a, x)                       # 정렬 배열에서 x의 왼쪽 경계
+# bisect_right(a, x)                      # 정렬 배열에서 x의 오른쪽 경계
+# bisect_right(a, x)-bisect_left(a, x)    # x 등장 횟수, O(log N)
+# from heapq import heappush, heappop     # 최소 힙 O(log N)
+# from collections import deque           # 큐: append / popleft O(1)
+# stack = [start]; stack.pop()            # 반복 DFS에 이용
+
+# ==================== 2. 문법 / 성능 함정 ====================
+# -7 // 3 == -3; int(-7 / 3) == -2        # //는 내림, int는 0 방향 절삭
+# (a + b - 1) // b                        # a>=0, b>0인 경우 ceil(a/b)
+# x = [[0] * m for _ in range(n)]        # 곱셈으로 내부 리스트 반복 금지
+# 최대 우선, r/c 최소 우선: max((v, -r, -c) for v, r, c in arr)
+# list.sort(), list.reverse(), set.add() 반환값은 None
+# len(a[:k]) / a[:k] 자체가 O(k); 루프 내 슬라이싱 비용 주의
+# 반복 문자열 += 는 누적 복사 비용 가능 -> 리스트에 모아 join 권장
+# max, min, sum, list, str, input 등을 변수명으로 덮어쓰지 않기
+# Python DFS 재귀 깊이 한도/스택 문제: 가능한 경우 반복 DFS 고려
+# float 비교는 오차 주의: 정수 제곱 거리, cross 등 우선 사용
+# 최악 복잡도 가이드(문제마다 다름): 2^N ~ N<=20, N^2 ~ N<=1e3,
+# N log N ~ N<=1e5, N ~ N<=1e6, N<=1e12이면 log N/sqrt N 고려
+
+# ==================== 3. 이분 탐색: 최초 참 ====================
+def first_true(lo, hi, ok):
+    """ok(x)가 False -> True로 단조 변화하고 ok(hi)가 True일 때 첫 True."""
+    while lo < hi:
+        mid = (lo + hi) // 2
+        if ok(mid):
+            hi = mid
+        else:
+            lo = mid + 1
+    return lo
+
+
+def kth_multiplication_table(n, k):
+    """n*n 곱셈표의 k번째 원소 (1<=k<=n*n), O(n log n)."""
+    def count_leq(x):
+        return sum(min(n, x // i) for i in range(1, n + 1))
+    # count(mid) == k여도 중단 금지! 답은 count(x)>=k인 최소 x.
+    return first_true(1, n * n, lambda x: count_leq(x) >= k)
+
+
+# ==================== 4. DP: 편집 거리 ====================
+def edit_distance(a, b):
+    """삽입/삭제/교체 비용 각 1, O(len(a)*len(b)) 시간/공간."""
+    n, m = len(a), len(b)
+    dp = [[0] * (m + 1) for _ in range(n + 1)]
+    for i in range(n + 1):
+        dp[i][0] = i             # 빈 문자열로 만드는 삭제 비용
+    for j in range(m + 1):
+        dp[0][j] = j             # 빈 문자열부터 삽입 비용
+    for i in range(1, n + 1):
+        for j in range(1, m + 1):
+            dp[i][j] = min(dp[i-1][j] + 1,
+                           dp[i][j-1] + 1,
+                           dp[i-1][j-1] + (a[i-1] != b[j-1]))
+    return dp[n][m]
+
+# DP 체크: dp의 의미 -> 초기값 -> 점화식 -> 순회순서 -> 최종 위치
+# 최대값 DP의 불가능한 상태는 -INF, 경우의 수 DP는 MOD 적용 확인
+# 1차원 DP 압축 시 이전 행/현재 행 값이 섞이지 않는지 확인
+
+# ==================== 5. 좌표기하 ====================
+def sub(a, b):
+    return (a[0] - b[0], a[1] - b[1])
+
+
+def dot(u, v):
+    return u[0] * v[0] + u[1] * v[1]
+
+
+def cross(u, v):
+    return u[0] * v[1] - u[1] * v[0]
+
+
+def dist2(a, b):
+    return dot(sub(a, b), sub(a, b))  # 거리 비교 시 sqrt 생략
+
+
+def area2(a, b, p):
+    return abs(cross(sub(b, a), sub(p, a)))  # 삼각형 넓이의 2배
+
+
+def perpendicular_foot(a, b, p):
+    """직선 AB 위 점 P의 수선의 발 H와 비율 t; A!=B 필요."""
+    v = sub(b, a)
+    denom = dot(v, v)
+    if denom == 0:
+        raise ValueError('A와 B가 같아 직선이 정의되지 않음')
+    t = dot(sub(p, a), v) / denom
+    h = (a[0] + t * v[0], a[1] + t * v[1])
+    return h, t             # 0<=t<=1이면 발이 선분 AB 내부/끝
+
+
+def point_line_dist(a, b, p):
+    """점 P와 무한 직선 AB의 거리 (A!=B)."""
+    return area2(a, b, p) / math.sqrt(dist2(a, b))
+
+
+def reflected_point(a, b, p):
+    """점 P를 무한 직선 AB에 대칭시킨 점."""
+    h, _ = perpendicular_foot(a, b, p)
+    return (2 * h[0] - p[0], 2 * h[1] - p[1])
+
+
+def intersection_x(a, b, c):
+    """직선 AB와 x=c의 교점, 평행이면 None (일치도 None)."""
+    dx = b[0] - a[0]
+    if dx == 0:
+        return None
+    t = (c - a[0]) / dx
+    return (c, a[1] + t * (b[1] - a[1]))
+
+
+def intersection_y(a, b, c):
+    """직선 AB와 y=c의 교점, 평행이면 None (일치도 None)."""
+    dy = b[1] - a[1]
+    if dy == 0:
+        return None
+    t = (c - a[1]) / dy
+    return (a[0] + t * (b[0] - a[0]), c)
+
+# 좌표 주의: (x,y)와 (행,열) 혼동 / 평행, 일치, 점 같은 입력 확인
+# 큰 정수의 기하 판정은 cross 부호로 수행 (float 회피)
+
+# ==================== 6. 제출 전 최종 점검 ====================
+# [ ] N=0/1, 빈 문자열, 원소 1개, 모든 값 동일
+# [ ] 0/음수/중복값, 최솟값·최댓값, 정답 구간 양 끝
+# [ ] 이분 탐색: 단조성, 경계, 첫 True/마지막 True, == 종료 금지
+# [ ] DP: 초기값, 첫 행/열, 불가능 상태, 갱신 순서
+# [ ] 그래프: 방문 체크 시점, 중복 간선, 비연결, DFS 깊이
+# [ ] 인덱스: 0/1-based, (행,열) vs (x,y), 범위 초과
+# [ ] 나눗셈: 음수 //, 0 나누기, ceil, 부동소수점 오차
+# [ ] 시간/메모리: O(N) 연산의 중첩, 복사·슬라이싱, 재귀
+# [ ] 출력: 개행, 공백, 요구 자료형, 반례 직접 테스트

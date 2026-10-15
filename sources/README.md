@@ -7,6 +7,7 @@
 - `code/`, `docs/upstream/`: 원본 C++ 코드와 문서.
 - `python/`: 전체 Python 변환판.
 - `mixed/`: 혼합판 C++ 헤더와 언어 선택 목록.
+- `supplement/`: 8.5pt 자료 추가판의 Python 참조·추가 알고리즘·제공 원문.
 - `versions/`: 원본 C++, Python, 혼합판의 독립 배포 ZIP.
 - `output/`, `tmp/`: 자동 생성되는 중간 산출물로 Git에서 제외합니다.
 

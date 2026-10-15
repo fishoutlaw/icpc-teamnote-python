@@ -65,10 +65,21 @@ bundle('python', common + ['main.tex', 'scripts/build_teamnote.py', 'scripts/ver
     'icpc-teamnote-python.pdf': (ROOT / 'output/pdf/icpc-teamnote-python.pdf').read_bytes(),
 })
 bundle('mixed', common + ['mixed', 'mixed.tex', 'tests/mixed_runner.cpp',
+                         'supplement', 'mixed-supplement.tex', 'mixed-supplement-9pt.tex',
+                         'tests/test_supplement.py',
+                         'scripts/supplement_manifest.py',
                          'scripts/build_mixed.py', 'scripts/mixed_manifest.py',
                          'scripts/verify_mixed.py', 'scripts/verify_mixed_pdf.py'], {
     'README.md': readme('Python + C++', 'python scripts/build_mixed.py\npython scripts/verify_mixed_pdf.py\npython scripts/verify_mixed.py',
-                       '22쪽. Python 전용 15개, C++ 전용 16개, 양쪽 18개입니다. '
+                       '기본판 22쪽. Python 전용 15개, C++ 전용 16개, 양쪽 18개입니다. '
+                       'versions/의 자료 추가판은 8.5pt 23쪽, 9pt 생성기 기준 24쪽입니다. '
+                       '9pt 추가판은 별도 PDF 검증과 페이지 이미지 렌더링을 수행하지 않았습니다. '
+                       '9pt 생성은 python scripts/build_mixed.py --supplement --font-size 9 --skip-validation입니다. '
+                       'build_mixed.py와 '
+                       'verify_mixed_pdf.py에 --supplement를 붙여 재생성·검증합니다. '
+                       '추가 코드와 중복 제거 기록은 supplement/에 있습니다. '
                        'C++ 검증에는 PATH의 g++가 필요합니다. 사용 조건은 mixed/README.md를 참조하세요.'),
     'icpc-teamnote-mixed.pdf': (ROOT / 'output/pdf/icpc-teamnote-mixed.pdf').read_bytes(),
+    'versions/icpc-teamnote-mixed-supplement.pdf': (ROOT / 'versions/icpc-teamnote-mixed-supplement.pdf').read_bytes(),
+    'versions/icpc-teamnote-mixed-supplement-9pt.pdf': (ROOT / 'versions/icpc-teamnote-mixed-supplement-9pt.pdf').read_bytes(),
 })
